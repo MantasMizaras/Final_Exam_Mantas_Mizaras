@@ -1,13 +1,12 @@
-###
-GET http://localhost:3000/api/users
+### USERS LOGIN/REGISTER
 
 ###
 POST http://localhost:3000/api/register
 Content-Type: application/json
 
 {
-"nickname": "Kez",
-"email": "kiesa@kestis.lt",
+"nickname": "Value",
+"email": "value@value.lt",
 "password": "secret123"
 }
 
@@ -16,6 +15,20 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-"email": "kiesa@kestis.lt",
+"email": "value@value.lt",
 "password": "secret123"
 }
+
+### QUESTIONS
+###
+GET http://localhost:3000/api/question
+
+###
+POST http://localhost:3000/api/question
+Content-Type: application/json
+
+{
+  "title": "Another one",
+  "content": "testing second question"
+}
+
