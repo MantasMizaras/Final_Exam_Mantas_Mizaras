@@ -15,7 +15,7 @@ async function executeDb(sql, dataToDbArr) {
   }
 }
 
-function getQuestions() {
+function showQuestions() {
   const sql = 'SELECT * FROM questions';
   return executeDb(sql);
 }
@@ -25,19 +25,19 @@ function createNewQuestion(title, content) {
   return executeDb(sql, [title, content]);
 }
 
-function updateQuestion(id, title, content) {
+function patchQuestion(id, title, content) {
   const sql = `UPDATE questions SET title = ? ,content = ? WHERE id=${id.id} `;
   return executeDb(sql, [title, content]);
 }
 
-function deleteQuestion(id) {
+function removeQuestion(id) {
   const sql = `DELETE FROM questions WHERE id=${id.id}`;
   return executeDb(sql, [id]);
 }
 
 module.exports = {
-  getQuestions,
+  showQuestions,
   createNewQuestion,
-  updateQuestion,
-  deleteQuestion,
+  patchQuestion,
+  removeQuestion,
 };

@@ -29,8 +29,8 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY1ODkwOTYwMCwiZXhwIjoxNjU4OTIwNDAwfQ.md9WJbuUgzeASP72IFTPoRoACQGryittgSh1SOTEgcc
 
 {
-  "title": "Controller added",
-  "content": "rest rest tetsing after moving to controller"
+  "title": "Controller qustion",
+  "content": "rest rest tetsing after moving to controller question"
 }
 
 ###
@@ -44,7 +44,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhd
 }
 
 ###
-DELETE http://localhost:3000/api/question/3
+DELETE http://localhost:3000/api/question/5
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1ODg5OTc4NSwiZXhwIjoxNjU4OTEwNTg1fQ.Xk5qbH6korc9uNt4HYZAs_M_vuntNbWchdrJdXAQXvg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY1ODkxMTUwOCwiZXhwIjoxNjU4OTIyMzA4fQ.WdTCxj4ihCotzu_OB68gHFYJSg7_V0FC60YZQEKQkoU
 
