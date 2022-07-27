@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const mysql = require('mysql2/promise');
 const { dbConfig } = require('../config');
 
@@ -20,9 +21,9 @@ function showQuestions() {
   return executeDb(sql);
 }
 
-function createNewQuestion(title, content) {
-  const sql = 'INSERT INTO questions (title, content) VALUES (?, ?)';
-  return executeDb(sql, [title, content]);
+function createNewQuestion(title, content, user_id) {
+  const sql = 'INSERT INTO questions (title, content, user_id) VALUES (?, ?, ?)';
+  return executeDb(sql, [title, content, user_id]);
 }
 
 function patchQuestion(id, title, content) {

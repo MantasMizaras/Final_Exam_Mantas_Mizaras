@@ -15,7 +15,7 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-"email": "ctrl@ctrl.lt",
+"email": "kiesa@kestis.lt",
 "password": "secret123"
 }
 
@@ -26,11 +26,11 @@ GET http://localhost:3000/api/question
 ###
 POST http://localhost:3000/api/question
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY1ODkwOTYwMCwiZXhwIjoxNjU4OTIwNDAwfQ.md9WJbuUgzeASP72IFTPoRoACQGryittgSh1SOTEgcc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkyMTY0NywiZXhwIjoxNjU4OTMyNDQ3fQ.Ao4ACRfO_4s5RFGFj3qcsfmFKLClZNH822vX3s8n1Dg
 
 {
-  "title": "Controller qustion",
-  "content": "rest rest tetsing after moving to controller question"
+  "title": "UserId question another one",
+  "content": "UserID checking different token"
 }
 
 ###
@@ -44,7 +44,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhd
 }
 
 ###
-DELETE http://localhost:3000/api/question/5
+DELETE http://localhost:3000/api/question/6
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY1ODkxMTUwOCwiZXhwIjoxNjU4OTIyMzA4fQ.WdTCxj4ihCotzu_OB68gHFYJSg7_V0FC60YZQEKQkoU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkyMTY0NywiZXhwIjoxNjU4OTMyNDQ3fQ.Ao4ACRfO_4s5RFGFj3qcsfmFKLClZNH822vX3s8n1Dg
 

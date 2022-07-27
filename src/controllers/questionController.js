@@ -12,8 +12,9 @@ const getQuestions = async (req, res) => {
 
 const postQuestion = async (req, res) => {
   const { title, content } = req.body;
+  const idFromToken = req.userId;
   try {
-    const result = await createNewQuestion(title, content);
+    const result = await createNewQuestion(title, content, idFromToken);
     if (result.affectedRows === 1) {
       res.status(201).json('Question succesfully created!');
       return;
