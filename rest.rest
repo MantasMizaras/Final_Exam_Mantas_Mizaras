@@ -44,7 +44,35 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhd
 }
 
 ###
-DELETE http://localhost:3000/api/question/6
+DELETE http://localhost:3000/api/question/11
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkyMTY0NywiZXhwIjoxNjU4OTMyNDQ3fQ.Ao4ACRfO_4s5RFGFj3qcsfmFKLClZNH822vX3s8n1Dg
+
+### Q&A
+###
+GET http://localhost:3000/api/question/1/answer
+
+###
+POST http://localhost:3000/api/question/1/answer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkyMTY0NywiZXhwIjoxNjU4OTMyNDQ3fQ.Ao4ACRfO_4s5RFGFj3qcsfmFKLClZNH822vX3s8n1Dg
+
+{
+  "answer": "Trecias atsakymas"
+}
+
+### ANSWERS
+PATCH http://localhost:3000/api/answer/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkzNDU0MSwiZXhwIjoxNjU4OTQ1MzQxfQ._bkXoR61eGppDP6BCGQlfCrYEgYOqVY8AP2bW-615os
+
+{
+  "answer": "ar update pavyks ? Antram Answer"
+}
+
+###
+DELETE http://localhost:3000/api/answer/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkzNDU0MSwiZXhwIjoxNjU4OTQ1MzQxfQ._bkXoR61eGppDP6BCGQlfCrYEgYOqVY8AP2bW-615os
+
 

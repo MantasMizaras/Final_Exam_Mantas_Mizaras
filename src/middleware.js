@@ -43,6 +43,19 @@ async function validateQuestion(req, res, next) {
   }
 }
 
+async function validateAnswer(req, res, next) {
+  const schema = Joi.object({
+    answer: Joi.string().min(3).max(255).required(),
+  });
+
+  try {
+    await schema.validateAsync(req.body, { abortEarly: false });
+    next();
+  } catch (error) {
+    res.status(400).json(error.details);
+  }
+}
+
 async function validateToken(req, res, next) {
   const tokenFromHeaders = req.headers.authorization?.split(' ')[1];
 
@@ -73,5 +86,6 @@ module.exports = {
   validateUserRegister,
   validateUserLogin,
   validateQuestion,
+  validateAnswer,
   validateToken,
 };
