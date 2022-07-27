@@ -5,8 +5,8 @@ POST http://localhost:3000/api/register
 Content-Type: application/json
 
 {
-"nickname": "Value",
-"email": "value@value.lt",
+"nickname": "controller",
+"email": "ctrl@ctrl.lt",
 "password": "secret123"
 }
 
@@ -15,7 +15,7 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-"email": "value@value.lt",
+"email": "ctrl@ctrl.lt",
 "password": "secret123"
 }
 
@@ -26,21 +26,21 @@ GET http://localhost:3000/api/question
 ###
 POST http://localhost:3000/api/question
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1ODg5OTc4NSwiZXhwIjoxNjU4OTEwNTg1fQ.Xk5qbH6korc9uNt4HYZAs_M_vuntNbWchdrJdXAQXvg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY1ODkwOTYwMCwiZXhwIjoxNjU4OTIwNDAwfQ.md9WJbuUgzeASP72IFTPoRoACQGryittgSh1SOTEgcc
 
 {
-  "title": "Three ?",
-  "content": "testing three question"
+  "title": "Controller added",
+  "content": "rest rest tetsing after moving to controller"
 }
 
 ###
-PATCH http://localhost:3000/api/question/3
+PATCH http://localhost:3000/api/question/4
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1ODg5OTc4NSwiZXhwIjoxNjU4OTEwNTg1fQ.Xk5qbH6korc9uNt4HYZAs_M_vuntNbWchdrJdXAQXvg
 
 {
-  "title": "Tyyyyhy",
-  "content": "testing three question UPDATE UPDATE"
+  "title": "Controller added TESTING PATCH",
+  "content": "rest rest tetsing after moving to controller TESTING PATCH"
 }
 
 ###
