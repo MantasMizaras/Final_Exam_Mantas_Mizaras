@@ -26,9 +26,25 @@ GET http://localhost:3000/api/question
 ###
 POST http://localhost:3000/api/question
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1ODg5OTc4NSwiZXhwIjoxNjU4OTEwNTg1fQ.Xk5qbH6korc9uNt4HYZAs_M_vuntNbWchdrJdXAQXvg
 
 {
-  "title": "Another one",
-  "content": "testing second question"
+  "title": "Three ?",
+  "content": "testing three question"
 }
+
+###
+PATCH http://localhost:3000/api/question/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1ODg5OTc4NSwiZXhwIjoxNjU4OTEwNTg1fQ.Xk5qbH6korc9uNt4HYZAs_M_vuntNbWchdrJdXAQXvg
+
+{
+  "title": "Tyyyyhy",
+  "content": "testing three question UPDATE UPDATE"
+}
+
+###
+DELETE http://localhost:3000/api/question/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1ODg5OTc4NSwiZXhwIjoxNjU4OTEwNTg1fQ.Xk5qbH6korc9uNt4HYZAs_M_vuntNbWchdrJdXAQXvg
 

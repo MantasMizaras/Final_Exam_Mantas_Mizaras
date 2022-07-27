@@ -25,7 +25,19 @@ function createNewQuestion(title, content) {
   return executeDb(sql, [title, content]);
 }
 
+function updateQuestion(id, title, content) {
+  const sql = `UPDATE questions SET title = ? ,content = ? WHERE id=${id.id} `;
+  return executeDb(sql, [title, content]);
+}
+
+function deleteQuestion(id) {
+  const sql = `DELETE FROM questions WHERE id=${id.id}`;
+  return executeDb(sql, [id]);
+}
+
 module.exports = {
   getQuestions,
   createNewQuestion,
+  updateQuestion,
+  deleteQuestion,
 };
