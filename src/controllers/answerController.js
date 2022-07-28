@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable object-curly-newline */
 const { showAnswers, createNewAnswer, patchAnswer, removeAnswer } = require('../model/answerModel');
 
@@ -14,8 +15,9 @@ const getAnswers = async (req, res) => {
 const postAnswer = async (req, res) => {
   const { answer } = req.body;
   const { id } = req.params;
+  const idFromToken = req.userId;
   try {
-    const result = await createNewAnswer(answer, id);
+    const result = await createNewAnswer(answer, id, idFromToken);
     if (result.affectedRows === 1) {
       res.status(201).json('Answer succesfully added!');
       return;
@@ -28,8 +30,13 @@ const postAnswer = async (req, res) => {
 };
 
 const updateAnswer = async (req, res) => {
-  const id = req.params;
+  const { id, user_id } = req.params;
   const { answer } = req.body;
+  const idFromToken = req.userId;
+  if (idFromToken !== user_id) {
+    res.status(403).json('It is not your answer! You can not UPDATE!');
+    return;
+  }
   try {
     const result = await patchAnswer(id, answer);
     if (result.affectedRows === 1) {
@@ -44,7 +51,12 @@ const updateAnswer = async (req, res) => {
 };
 
 const deleteAnswer = async (req, res) => {
-  const id = req.params;
+  const { id, user_id } = req.params;
+  const idFromToken = req.userId;
+  if (idFromToken !== user_id) {
+    res.status(403).json('It is not your answer! You can not DELETE!');
+    return;
+  }
   try {
     const result = await removeAnswer(id);
     if (result.affectedRows === 1) {

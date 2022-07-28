@@ -17,13 +17,13 @@ async function executeDb(sql, dataToDbArr) {
 }
 
 function showAnswers(id) {
-  const sql = `SELECT * FROM answers WHERE question_id=${id} `;
+  const sql = `SELECT * FROM answers WHERE question_id=${id} AND archived=0`;
   return executeDb(sql, [id]);
 }
 
-function createNewAnswer(answer, question_id) {
-  const sql = 'INSERT INTO answers (answer, question_id) VALUES (?, ?)';
-  return executeDb(sql, [answer, question_id]);
+function createNewAnswer(answer, question_id, user_id) {
+  const sql = 'INSERT INTO answers (answer, question_id, user_id) VALUES (?, ?, ?)';
+  return executeDb(sql, [answer, question_id, user_id]);
 }
 
 function patchAnswer(id, answer) {
@@ -32,7 +32,7 @@ function patchAnswer(id, answer) {
 }
 
 function removeAnswer(id) {
-  const sql = `DELETE FROM answers WHERE id=${id.id} `;
+  const sql = `UPDATE answers SET archived=1 WHERE id=${id.id} `;
   return executeDb(sql, [id]);
 }
 

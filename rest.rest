@@ -5,8 +5,8 @@ POST http://localhost:3000/api/register
 Content-Type: application/json
 
 {
-"nickname": "controller",
-"email": "ctrl@ctrl.lt",
+"nickname": "Del Q, with A belongs",
+"email": "ques@answer.lt",
 "password": "secret123"
 }
 
@@ -15,7 +15,7 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-"email": "kiesa@kestis.lt",
+"email": "ques@answer.lt",
 "password": "secret123"
 }
 
@@ -26,17 +26,17 @@ GET http://localhost:3000/api/question
 ###
 POST http://localhost:3000/api/question
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkyMTY0NywiZXhwIjoxNjU4OTMyNDQ3fQ.Ao4ACRfO_4s5RFGFj3qcsfmFKLClZNH822vX3s8n1Dg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1OTAwMjkxNCwiZXhwIjoxNjU5MDEzNzE0fQ.viE9zNk9pY4cAH24_Z39_UE9n9tDGFwAPuqum4cNA3o
 
 {
-  "title": "UserId question another one",
-  "content": "UserID checking different token"
+  "title": "Q&ADE",
+  "content": "Q&A following"
 }
 
 ###
-PATCH http://localhost:3000/api/question/4
+PATCH http://localhost:3000/api/question/10
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY1ODg5OTc4NSwiZXhwIjoxNjU4OTEwNTg1fQ.Xk5qbH6korc9uNt4HYZAs_M_vuntNbWchdrJdXAQXvg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODk5NTQzNCwiZXhwIjoxNjU5MDA2MjM0fQ.47wnz50sKWi8huvYMoEKhMWHZASaKiDOZCmXgWK92qc
 
 {
   "title": "Controller added TESTING PATCH",
@@ -44,9 +44,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhd
 }
 
 ###
-DELETE http://localhost:3000/api/question/11
+DELETE http://localhost:3000/api/question/4
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkyMTY0NywiZXhwIjoxNjU4OTMyNDQ3fQ.Ao4ACRfO_4s5RFGFj3qcsfmFKLClZNH822vX3s8n1Dg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1OTAwMjkxNCwiZXhwIjoxNjU5MDEzNzE0fQ.viE9zNk9pY4cAH24_Z39_UE9n9tDGFwAPuqum4cNA3o
 
 ### Q&A
 ###
@@ -55,24 +55,24 @@ GET http://localhost:3000/api/question/1/answer
 ###
 POST http://localhost:3000/api/question/1/answer
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkyMTY0NywiZXhwIjoxNjU4OTMyNDQ3fQ.Ao4ACRfO_4s5RFGFj3qcsfmFKLClZNH822vX3s8n1Dg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODk5NDA2MCwiZXhwIjoxNjU5MDA0ODYwfQ.raAJ3G693-AE8qV2FseG3dgqtoXxbgEXoLc5Nufzu_s
 
 {
-  "answer": "Trecias atsakymas"
+  "answer": "Su paduotu user_id , kieno atsakymas"
 }
 
 ### ANSWERS
-PATCH http://localhost:3000/api/answer/2
+PATCH http://localhost:3000/api/answer/3
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkzNDU0MSwiZXhwIjoxNjU4OTQ1MzQxfQ._bkXoR61eGppDP6BCGQlfCrYEgYOqVY8AP2bW-615os
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODk5MDIxNCwiZXhwIjoxNjU5MDAxMDE0fQ.xyneLcd9j-U4yVgTdebjgnz_hXM2YwcXlEHskL6_nY8
 
 {
-  "answer": "ar update pavyks ? Antram Answer"
+  "answer": "Update treciam question"
 }
 
 ###
-DELETE http://localhost:3000/api/answer/1
+DELETE http://localhost:3000/api/answer/2
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODkzNDU0MSwiZXhwIjoxNjU4OTQ1MzQxfQ._bkXoR61eGppDP6BCGQlfCrYEgYOqVY8AP2bW-615os
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODk5MDIxNCwiZXhwIjoxNjU5MDAxMDE0fQ.xyneLcd9j-U4yVgTdebjgnz_hXM2YwcXlEHskL6_nY8
 
 

@@ -17,7 +17,7 @@ async function executeDb(sql, dataToDbArr) {
 }
 
 function showQuestions() {
-  const sql = 'SELECT * FROM questions';
+  const sql = 'SELECT * FROM questions WHERE archived=0';
   return executeDb(sql);
 }
 
@@ -32,7 +32,8 @@ function patchQuestion(id, title, content) {
 }
 
 function removeQuestion(id) {
-  const sql = `DELETE FROM questions WHERE id=${id.id}`;
+  // const sql = `DELETE FROM questions WHERE id=${id.id}`;
+  const sql = `UPDATE questions SET archived=1 WHERE id=${id.id} `;
   return executeDb(sql, [id]);
 }
 

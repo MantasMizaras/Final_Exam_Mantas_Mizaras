@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable object-curly-newline */
 const { showQuestions, createNewQuestion, patchQuestion, removeQuestion } = require('../model/questionModel');
 
@@ -27,8 +28,13 @@ const postQuestion = async (req, res) => {
 };
 
 const updateQuestion = async (req, res) => {
-  const id = req.params;
+  const { id, user_id } = req.params;
   const { title, content } = req.body;
+  const idFromToken = req.userId;
+  if (idFromToken !== user_id) {
+    res.status(403).json('It is not your question! You can not UPDATE!');
+    return;
+  }
   try {
     const result = await patchQuestion(id, title, content);
     if (result.affectedRows === 1) {
@@ -43,7 +49,12 @@ const updateQuestion = async (req, res) => {
 };
 
 const deleteQuestion = async (req, res) => {
-  const id = req.params;
+  const { id, user_id } = req.params;
+  const idFromToken = req.userId;
+  if (idFromToken !== user_id) {
+    res.status(403).json('It is not your question! You can not DELETE!');
+    return;
+  }
   try {
     const result = await removeQuestion(id);
     if (result.affectedRows === 1) {
