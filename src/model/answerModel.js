@@ -31,9 +31,9 @@ function patchAnswer(id, answer) {
   return executeDb(sql, [answer]);
 }
 
-function removeAnswer(id) {
-  const sql = `UPDATE answers SET archived=1 WHERE id=${id.id} `;
-  return executeDb(sql, [id]);
+function removeAnswer(id, user_id) {
+  const sql = `UPDATE answers SET archived=1 WHERE id=${id.id} AND user_id=${user_id} `;
+  return executeDb(sql, [id, user_id]);
 }
 
 module.exports = {

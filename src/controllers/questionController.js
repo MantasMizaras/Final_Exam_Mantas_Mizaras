@@ -49,14 +49,12 @@ const updateQuestion = async (req, res) => {
 };
 
 const deleteQuestion = async (req, res) => {
-  const { id, user_id } = req.params;
+  const id = req.params;
+
   const idFromToken = req.userId;
-  if (idFromToken !== user_id) {
-    res.status(403).json('It is not your question! You can not DELETE!');
-    return;
-  }
+
   try {
-    const result = await removeQuestion(id);
+    const result = await removeQuestion(id, idFromToken);
     if (result.affectedRows === 1) {
       res.status(201).json('Question succesfully deleted!');
       return;

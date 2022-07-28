@@ -31,10 +31,10 @@ function patchQuestion(id, title, content) {
   return executeDb(sql, [title, content]);
 }
 
-function removeQuestion(id) {
+function removeQuestion(id, user_id) {
   // const sql = `DELETE FROM questions WHERE id=${id.id}`;
-  const sql = `UPDATE questions SET archived=1 WHERE id=${id.id} `;
-  return executeDb(sql, [id]);
+  const sql = `UPDATE questions SET archived=1 WHERE id=${id.id} AND user_id=${user_id} `;
+  return executeDb(sql, [id, user_id]);
 }
 
 module.exports = {

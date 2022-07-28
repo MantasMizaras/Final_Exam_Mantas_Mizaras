@@ -46,7 +46,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhd
 ###
 DELETE http://localhost:3000/api/question/4
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1OTAwMjkxNCwiZXhwIjoxNjU5MDEzNzE0fQ.viE9zNk9pY4cAH24_Z39_UE9n9tDGFwAPuqum4cNA3o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY1OTAxMjcwNCwiZXhwIjoxNjU5MDIzNTA0fQ.bnQ8lTlgJf9WOwzeNxmjc-l5f6mqRsKIIP_WXrOwKWs
 
 ### Q&A
 ###
@@ -71,8 +71,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhd
 }
 
 ###
-DELETE http://localhost:3000/api/answer/2
+DELETE http://localhost:3000/api/answer/6
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODk5MDIxNCwiZXhwIjoxNjU5MDAxMDE0fQ.xyneLcd9j-U4yVgTdebjgnz_hXM2YwcXlEHskL6_nY8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1OTAxMzA2OSwiZXhwIjoxNjU5MDIzODY5fQ.KbzlC0a21ROjNZtFEd9F3Lr3oQbCS8cnm_LcSdwthtc
 
 
