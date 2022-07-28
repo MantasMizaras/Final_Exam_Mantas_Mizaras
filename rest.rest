@@ -15,7 +15,7 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-"email": "ques@answer.lt",
+"email": "kiesa@kestis.lt",
 "password": "secret123"
 }
 
@@ -34,13 +34,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhd
 }
 
 ###
-PATCH http://localhost:3000/api/question/10
+PATCH http://localhost:3000/api/question/7
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODk5NTQzNCwiZXhwIjoxNjU5MDA2MjM0fQ.47wnz50sKWi8huvYMoEKhMWHZASaKiDOZCmXgWK92qc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1OTAxMzUwMywiZXhwIjoxNjU5MDI0MzAzfQ.LDQl5kMOEdhqcGM-FfNTrm1lTKLsxR9xLuFZzBos-KQ
 
 {
-  "title": "Controller added TESTING PATCH",
-  "content": "rest rest tetsing after moving to controller TESTING PATCH"
+  "title": "Updating",
+  "content": "Updating just from right accout"
 }
 
 ###
@@ -62,12 +62,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhd
 }
 
 ### ANSWERS
-PATCH http://localhost:3000/api/answer/3
+PATCH http://localhost:3000/api/answer/4
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODk5MDIxNCwiZXhwIjoxNjU5MDAxMDE0fQ.xyneLcd9j-U4yVgTdebjgnz_hXM2YwcXlEHskL6_nY8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1OTAxMzUwMywiZXhwIjoxNjU5MDI0MzAzfQ.LDQl5kMOEdhqcGM-FfNTrm1lTKLsxR9xLuFZzBos-KQ
 
 {
-  "answer": "Update treciam question"
+  "answer": "Kodel meta hieroglifus ?"
 }
 
 ###

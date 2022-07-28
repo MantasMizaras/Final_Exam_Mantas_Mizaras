@@ -26,14 +26,14 @@ function createNewQuestion(title, content, user_id) {
   return executeDb(sql, [title, content, user_id]);
 }
 
-function patchQuestion(id, title, content) {
-  const sql = `UPDATE questions SET title = ? ,content = ? WHERE id=${id.id} `;
-  return executeDb(sql, [title, content]);
+function patchQuestion(id, title, content, user_id) {
+  const sql = `UPDATE questions SET title = ? ,content = ? WHERE id=${id.id} AND user_id=${user_id}`;
+  return executeDb(sql, [title, content, user_id]);
 }
 
 function removeQuestion(id, user_id) {
   // const sql = `DELETE FROM questions WHERE id=${id.id}`;
-  const sql = `UPDATE questions SET archived=1 WHERE id=${id.id} AND user_id=${user_id} `;
+  const sql = `UPDATE questions SET archived=1 WHERE id=${id.id} AND user_id=${user_id}`;
   return executeDb(sql, [id, user_id]);
 }
 

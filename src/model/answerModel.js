@@ -26,13 +26,13 @@ function createNewAnswer(answer, question_id, user_id) {
   return executeDb(sql, [answer, question_id, user_id]);
 }
 
-function patchAnswer(id, answer) {
-  const sql = `UPDATE answers SET answer = ? WHERE id=${id.id} `;
-  return executeDb(sql, [answer]);
+function patchAnswer(id, answer, user_id) {
+  const sql = `UPDATE answers SET answer = ? WHERE id=${id.id} AND user_id=${user_id}`;
+  return executeDb(sql, [answer, user_id]);
 }
 
 function removeAnswer(id, user_id) {
-  const sql = `UPDATE answers SET archived=1 WHERE id=${id.id} AND user_id=${user_id} `;
+  const sql = `UPDATE answers SET archived=1 WHERE id=${id.id} AND user_id=${user_id}`;
   return executeDb(sql, [id, user_id]);
 }
 

@@ -28,15 +28,11 @@ const postQuestion = async (req, res) => {
 };
 
 const updateQuestion = async (req, res) => {
-  const { id, user_id } = req.params;
+  const id = req.params;
   const { title, content } = req.body;
   const idFromToken = req.userId;
-  if (idFromToken !== user_id) {
-    res.status(403).json('It is not your question! You can not UPDATE!');
-    return;
-  }
   try {
-    const result = await patchQuestion(id, title, content);
+    const result = await patchQuestion(id, title, content, idFromToken);
     if (result.affectedRows === 1) {
       res.status(201).json('Question succesfully updated!');
       return;
@@ -50,9 +46,7 @@ const updateQuestion = async (req, res) => {
 
 const deleteQuestion = async (req, res) => {
   const id = req.params;
-
   const idFromToken = req.userId;
-
   try {
     const result = await removeQuestion(id, idFromToken);
     if (result.affectedRows === 1) {

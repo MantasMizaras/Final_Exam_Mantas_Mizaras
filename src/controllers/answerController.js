@@ -30,15 +30,11 @@ const postAnswer = async (req, res) => {
 };
 
 const updateAnswer = async (req, res) => {
-  const { id, user_id } = req.params;
+  const id = req.params;
   const { answer } = req.body;
   const idFromToken = req.userId;
-  if (idFromToken !== user_id) {
-    res.status(403).json('It is not your answer! You can not UPDATE!');
-    return;
-  }
   try {
-    const result = await patchAnswer(id, answer);
+    const result = await patchAnswer(id, answer, idFromToken);
     if (result.affectedRows === 1) {
       res.status(201).json('Answer succesfully updated!');
       return;
@@ -52,7 +48,6 @@ const updateAnswer = async (req, res) => {
 
 const deleteAnswer = async (req, res) => {
   const id = req.params;
-
   const idFromToken = req.userId;
   try {
     const result = await removeAnswer(id, idFromToken);
