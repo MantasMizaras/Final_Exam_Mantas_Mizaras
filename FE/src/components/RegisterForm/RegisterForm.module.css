@@ -12,3 +12,12 @@
   flex-direction: column;
   align-items: stretch;
 }
+
+.invalid-feedback {
+  color: rgb(214, 48, 19);
+  margin-top: 0;
+}
+
+.is-invalid {
+  border: 0.02rem solid rgb(214, 48, 19);
+}

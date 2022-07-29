@@ -31,7 +31,6 @@ function LoginForm() {
       console.log('values ===', values);
 
       if (fetchLoginResult.success === true) {
-        // toast.success('Login successfull!');
         toast.success(`Successfully logged in: ${values.email}`);
         ctx.login(fetchLoginResult.token, values.email);
         history.replace('/');
