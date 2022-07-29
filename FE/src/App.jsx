@@ -7,10 +7,12 @@ import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 import QuestionsPage from './pages/QuestionsPage';
 import RegisterPage from './pages/RegisterPage';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div className='App'>
+      <Toaster />
       <Header />
       <h1>Hello world</h1>
       <Switch>
