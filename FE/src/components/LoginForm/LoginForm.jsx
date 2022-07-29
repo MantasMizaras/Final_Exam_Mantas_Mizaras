@@ -1,6 +1,7 @@
 import css from './LoginForm.module.css';
 
 import { useFormik } from 'formik';
+import Button from '../UI/Button/Button';
 
 const initValues = {
   email: '',
@@ -27,9 +28,7 @@ function LoginForm() {
           <label htmlFor='password'>Password</label>
           <input onChange={formik.handleChange} value={formik.values.password} type='password' id='password' name='password' />
         </div>
-        <button type='submit' className={css.button}>
-          Login
-        </button>
+        <Button>Login</Button>
       </form>
     </div>
   );

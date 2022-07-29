@@ -1,6 +1,7 @@
 import css from './RegisterForm.module.css';
 
 import { useFormik } from 'formik';
+import Button from '../UI/Button/Button';
 
 const initValues = {
   email: '',
@@ -38,9 +39,7 @@ function RegisterForm() {
             name='repeatPassword'
           />
         </div>
-        <button type='submit' className={css.button}>
-          Register
-        </button>
+        <Button>Register</Button>
       </form>
     </div>
   );
