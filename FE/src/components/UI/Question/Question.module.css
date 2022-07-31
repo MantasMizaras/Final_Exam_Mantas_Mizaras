@@ -1,0 +1,32 @@
+.card {
+  border: 1px solid lightseagreen;
+  border-radius: 0.5rem;
+  padding: 10px;
+  width: 100%;
+}
+
+.card:hover {
+  background-color: rgba(222, 232, 240, 0.421);
+}
+
+.card-edit {
+  text-align: right;
+}
+
+.question-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-dislike {
+  display: flex;
+}
+
+.del-edit {
+  display: flex;
+}
+
+Button {
+  margin-right: 10px;
+}
