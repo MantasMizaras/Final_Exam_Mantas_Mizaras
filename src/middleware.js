@@ -45,7 +45,7 @@ async function validateQuestion(req, res, next) {
 
 async function validateAnswer(req, res, next) {
   const schema = Joi.object({
-    answer: Joi.string().min(3).max(255).required(),
+    answer: Joi.string().min(10).max(555).required(),
   });
 
   try {

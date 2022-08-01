@@ -4,6 +4,7 @@ import { baseUrl, myFetchAuth } from '../../utils';
 import { useHistory, useParams } from 'react-router-dom';
 import AnswerCard from '../../components/UI/Answer/Answer';
 import css from '../AnswerPage/AnswerPage.module.css';
+import AddAnswerForm from '../../components/AddAnswerForm/AddAnswerForm';
 // import toast from 'react-hot-toast';
 
 function AnswerPage() {
@@ -38,6 +39,7 @@ function AnswerPage() {
       <div className={css['cards-display']}>
         {answers.length > 0 ? answers.map((sObj) => <AnswerCard key={sObj.id} {...sObj} />) : <p>No answers yet.</p>}
       </div>
+      <AddAnswerForm />
     </div>
   );
   // } else {
