@@ -8,6 +8,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import QuestionsPage from './pages/QuestionsPage';
 import RegisterPage from './pages/RegisterPage';
 import { Toaster } from 'react-hot-toast';
+import AskQuestPage from './pages/AskQuestPage';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path={'/questions'}>
           <QuestionsPage />
+        </Route>
+        <Route path={'/add'}>
+          <AskQuestPage />
         </Route>
         <Route exact path={'/'}>
           <HomePage />

@@ -19,6 +19,9 @@ function Header(props) {
           <NavLink className={css['nav-link']} to={'/questions'}>
             Questions
           </NavLink>
+          <NavLink className={css['nav-link']} to={'/add'}>
+            Ask Question!
+          </NavLink>
           {isUserLoggedIn && (
             <>
               <div className={css['nav-control-display']}></div>

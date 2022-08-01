@@ -31,8 +31,8 @@ async function validateUserLogin(req, res, next) {
 
 async function validateQuestion(req, res, next) {
   const schema = Joi.object({
-    title: Joi.string().min(5).max(255).required(),
-    content: Joi.string().trim().max(555).required(),
+    title: Joi.string().trim().min(5).max(255).required(),
+    content: Joi.string().trim().min(20).max(555).required(),
   });
 
   try {
