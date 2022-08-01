@@ -2,10 +2,10 @@ import css from './RegisterForm.module.css';
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { myFetch, baseUrl } from '../../utils';
 import Button from '../UI/Button/Button';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const initValues = {
   nickname: '',
@@ -15,7 +15,7 @@ const initValues = {
 };
 
 function RegisterForm() {
-  // const history = useHistory();
+  const history = useHistory();
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -33,14 +33,15 @@ function RegisterForm() {
       const valuesCopy = { ...values };
       delete valuesCopy['repeatPassword'];
       const registerResult = await myFetch(`${baseUrl}/api/register`, 'POST', valuesCopy);
-      // if (registerResult.changes === 1) {
-      //   toast.success(`Success! Account: ${values.email} created!`);
-      //   history.replace('/login');
-      // }
-      // if (registerResult.changes !== 1) {
-      //   toast.error(`New user wasn't created`);
-      //   return;
-      // }
+      console.log('registerResult ===', registerResult);
+      if (registerResult === 'User successfully created!') {
+        toast.success(`Success! Account: ${values.email} created!`);
+        history.replace('/login');
+      }
+      if (registerResult === 'User not created.') {
+        toast.error(`New user wasn't created`);
+        return;
+      }
     },
   });
 

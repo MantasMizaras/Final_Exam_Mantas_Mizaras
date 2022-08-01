@@ -33,7 +33,7 @@ const userRegistration = async (req, res) => {
       res.status(500).json('Something went wrong.');
       return;
     }
-    res.status(201).json('User succesfully created!');
+    res.status(201).json('User successfully created!');
   } catch (error) {
     console.log(error);
     res.status(500).json('User not created.');
