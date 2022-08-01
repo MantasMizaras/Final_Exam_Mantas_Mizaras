@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { baseUrl, myFetchAuth } from '../utils';
-import { useAuthCtx } from '../store/AuthContext';
+import { baseUrl, myFetchAuth } from '../../utils';
+import { useAuthCtx } from '../../store/AuthContext';
 import { useHistory } from 'react-router-dom';
-import Question from '../components/UI/Question/Question';
-import css from '../pages/HomePage.module.css';
+// import Question from '../../components/UI/Question/Question';
+import css from '../HomePage/HomePage.module.css';
+import QueCard from '../../components/UI/Question/Question';
 // import toast from 'react-hot-toast';
 
 function HomePage() {
@@ -29,7 +30,7 @@ function HomePage() {
     <div className={css['container']}>
       <h1 className={css['title']}>All questions</h1>
       <div className={css['cards-display']}>
-        {questions.length > 0 ? questions.map((sObj) => <Question key={sObj.id} {...sObj} />) : <p>Waiting for questions</p>}
+        {questions.length > 0 ? questions.map((sObj) => <QueCard key={sObj.id} {...sObj} />) : <p>Waiting for questions</p>}
       </div>
     </div>
   );
