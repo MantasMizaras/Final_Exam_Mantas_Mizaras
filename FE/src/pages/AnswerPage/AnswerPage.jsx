@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
-import { baseUrl, myFetchAuth } from '../../utils';
-// import { useAuthCtx } from '../../store/AuthContext';
+import { baseUrl, myDeleteAuth, myFetchAuth } from '../../utils';
+import { useAuthCtx } from '../../store/AuthContext';
 import { useHistory, useParams } from 'react-router-dom';
 import AnswerCard from '../../components/UI/Answer/Answer';
 import css from '../AnswerPage/AnswerPage.module.css';
 import AddAnswerForm from '../../components/AddAnswerForm/AddAnswerForm';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 function AnswerPage() {
   //   const history = useHistory();
-  //   const { token } = useAuthCtx();
+  const { token } = useAuthCtx();
   const { id, title, content } = useParams();
   //   if (!token) history.push('/login');
   const [answers, setAnswers] = useState([]);
@@ -25,6 +25,18 @@ function AnswerPage() {
     }
   };
 
+  async function deleteAnswer(id) {
+    const fetchDelete = await myDeleteAuth(`${baseUrl}/api/answer/${id}`, 'DELETE', token);
+    console.log('fetchDelete===', fetchDelete);
+    if (fetchDelete === 'Answer succesfully deleted!') {
+      toast.success('Answer succesfully deleted!');
+      getAnswers();
+    }
+    if (fetchDelete === 'Answer was not deleted!') {
+      toast.error('Answer was not deleted!');
+    }
+  }
+
   useEffect(() => {
     getAnswers();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,7 +49,11 @@ function AnswerPage() {
         (`All answers question title: ${questTitle} , content: ${content}`)
       </h1>
       <div className={css['cards-display']}>
-        {answers.length > 0 ? answers.map((sObj) => <AnswerCard key={sObj.id} {...sObj} />) : <p>No answers yet.</p>}
+        {answers.length > 0 ? (
+          answers.map((sObj) => <AnswerCard key={sObj.id} {...sObj} onDelete={deleteAnswer} />)
+        ) : (
+          <p>No answers yet.</p>
+        )}
       </div>
       <AddAnswerForm />
     </div>
