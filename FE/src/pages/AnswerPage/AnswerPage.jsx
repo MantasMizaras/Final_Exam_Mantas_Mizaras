@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
 import { baseUrl, myFetchAuth } from '../../utils';
-import { useAuthCtx } from '../../store/AuthContext';
+// import { useAuthCtx } from '../../store/AuthContext';
 import { useHistory, useParams } from 'react-router-dom';
 import AnswerCard from '../../components/UI/Answer/Answer';
 import css from '../AnswerPage/AnswerPage.module.css';
 // import toast from 'react-hot-toast';
 
 function AnswerPage() {
-  const history = useHistory();
-  const { token } = useAuthCtx();
+  //   const history = useHistory();
+  //   const { token } = useAuthCtx();
   const { id, title, content } = useParams();
-  if (!token) history.push('/login');
+  //   if (!token) history.push('/login');
   const [answers, setAnswers] = useState([]);
 
   //   console.log('id, title, content  ===', id, title, content);
+
+  const questTitle = title;
 
   const getAnswers = async (values) => {
     const fetchResult = await myFetchAuth(`${baseUrl}/api/question/${id}/answer`, 'GET', values);
@@ -23,7 +25,7 @@ function AnswerPage() {
   };
 
   useEffect(() => {
-    if (token) getAnswers();
+    getAnswers();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -31,7 +33,7 @@ function AnswerPage() {
   return (
     <div className={css['container']}>
       <h1 className={css['title']}>
-        All answers question title: ${title} , content: ${content}
+        (`All answers question title: ${questTitle} , content: ${content}`)
       </h1>
       <div className={css['cards-display']}>
         {answers.length > 0 ? answers.map((sObj) => <AnswerCard key={sObj.id} {...sObj} />) : <p>No answers yet.</p>}

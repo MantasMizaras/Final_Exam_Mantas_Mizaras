@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { baseUrl, myFetchAuth } from '../../utils';
-import { useAuthCtx } from '../../store/AuthContext';
+import { baseUrl, myFetch, myFetchAuth } from '../../utils';
+// import { useAuthCtx } from '../../store/AuthContext';
 import { useHistory } from 'react-router-dom';
 // import Question from '../../components/UI/Question/Question';
 import css from '../HomePage/HomePage.module.css';
@@ -8,20 +8,20 @@ import QueCard from '../../components/UI/Question/Question';
 // import toast from 'react-hot-toast';
 
 function HomePage() {
-  const history = useHistory();
-  const { token } = useAuthCtx();
-  if (!token) history.push('/login');
+  // const history = useHistory();
+  // const { token } = useAuthCtx();
+  // if (!token) history.push('/login');
   const [questions, setQuestions] = useState([]);
 
   const getQuestions = async (values) => {
-    const fetchResult = await myFetchAuth(`${baseUrl}/api/question`, 'GET', token, values);
+    const fetchResult = await myFetch(`${baseUrl}/api/question`, 'GET', values);
     if (Array.isArray(fetchResult)) {
       setQuestions(fetchResult);
     }
   };
 
   useEffect(() => {
-    if (token) getQuestions();
+    getQuestions();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
