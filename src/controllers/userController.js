@@ -60,7 +60,7 @@ const userLogin = async (req, res) => {
   // generuojam jwt token
   const payload = { userId: foundUser.id };
   const token = jwt.sign(payload, jwtSecret, { expiresIn: '3h' });
-  res.json({ success: true, token });
+  res.json({ success: true, token, payload });
 };
 
 module.exports = { userRegistration, userLogin };

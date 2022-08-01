@@ -32,7 +32,7 @@ function LoginForm() {
 
       if (fetchLoginResult.success === true) {
         toast.success(`Successfully logged in: ${values.email}`);
-        ctx.login(fetchLoginResult.token, values.email);
+        ctx.login(fetchLoginResult.token, values.email, fetchLoginResult.payload.userId);
         history.replace('/');
       }
 
@@ -75,7 +75,7 @@ function LoginForm() {
             <p className={css['invalid-feedback']}>{formik.errors.password}</p>
           )}
         </div>
-        <Button>Login</Button>
+        <Button submit>Login</Button>
       </form>
     </div>
   );

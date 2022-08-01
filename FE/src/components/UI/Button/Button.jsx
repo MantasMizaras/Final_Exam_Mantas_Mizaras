@@ -1,9 +1,13 @@
 import css from './Button.module.css';
 
-function Button({ children }) {
+function Button(props) {
   return (
-    <button type='submit' className={css.button}>
-      {children}
+    <button
+      type={props.submit ? 'submit' : 'button'}
+      onClick={props.onClick}
+      className={props.secondary ? css.secondary : css.primary}
+    >
+      {props.children}
     </button>
   );
 }

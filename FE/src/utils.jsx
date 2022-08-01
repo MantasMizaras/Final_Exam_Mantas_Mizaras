@@ -34,6 +34,24 @@ export async function myFetchAuth(url, method = 'GET', token, data = null) {
   }
 }
 
+export async function myDeleteAuth(url, method = 'GET', token, data = null) {
+  try {
+    const options = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    options.method = method === 'DELETE' ? 'DELETE' : 'GET';
+    options.body = data ? JSON.stringify(data) : null;
+    const resp = await fetch(url, options);
+    const dataInJs = await resp.json();
+    return dataInJs;
+  } catch (error) {
+    throw new Error('Error myFetchAuth', error);
+  }
+}
+
 export const baseUrl = import.meta.env.VITE_BACKEND_URL;
 console.log('baseUrl===', baseUrl);
 if (!baseUrl) throw new Error('baseUrl nerastas');

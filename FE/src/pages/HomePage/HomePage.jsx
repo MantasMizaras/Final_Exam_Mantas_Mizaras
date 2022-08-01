@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
-import { baseUrl, myFetch, myFetchAuth } from '../../utils';
-// import { useAuthCtx } from '../../store/AuthContext';
-import { useHistory } from 'react-router-dom';
-// import Question from '../../components/UI/Question/Question';
+import { baseUrl, myDeleteAuth, myFetch, myFetchAuth } from '../../utils';
+import { useAuthCtx } from '../../store/AuthContext';
+// import { useHistory } from 'react-router-dom';
 import css from '../HomePage/HomePage.module.css';
 import QueCard from '../../components/UI/Question/Question';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 function HomePage() {
   // const history = useHistory();
-  // const { token } = useAuthCtx();
+  const { token } = useAuthCtx();
   // if (!token) history.push('/login');
   const [questions, setQuestions] = useState([]);
 
@@ -19,6 +18,18 @@ function HomePage() {
       setQuestions(fetchResult);
     }
   };
+
+  async function deleteQuestion(id) {
+    const fetchDelete = await myDeleteAuth(`${baseUrl}/api/question/${id}`, 'DELETE', token);
+    console.log('fetchDelete===', fetchDelete);
+    if (fetchDelete === 'Question succesfully deleted!') {
+      toast.success('Question succesfully deleted!');
+      getQuestions();
+    }
+    if (fetchDelete === 'Question was not deleted!') {
+      toast.error('Question was not deleted!');
+    }
+  }
 
   useEffect(() => {
     getQuestions();
@@ -30,7 +41,11 @@ function HomePage() {
     <div className={css['container']}>
       <h1 className={css['title']}>All questions</h1>
       <div className={css['cards-display']}>
-        {questions.length > 0 ? questions.map((sObj) => <QueCard key={sObj.id} {...sObj} />) : <p>Waiting for questions</p>}
+        {questions.length > 0 ? (
+          questions.map((sObj) => <QueCard key={sObj.id} {...sObj} onDelete={deleteQuestion} />)
+        ) : (
+          <p>No questions here.</p>
+        )}
       </div>
     </div>
   );
