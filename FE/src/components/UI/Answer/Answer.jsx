@@ -1,13 +1,12 @@
-import css from './Question.module.css';
+import css from './Answer.module.css';
 import Button from '../Button/Button';
-import { NavLink } from 'react-router-dom';
 
-function QueCard(props) {
+function AnswerCard(props) {
   return (
     <div className={css.card}>
       <div className={['card-text']}></div>
-      <h3 className={css['card-title']}>{props.title}</h3>
-      <p className={css['card-content']}>{props.content}</p>
+      <h3 className={css['card-title']}>{props.user_id}</h3>
+      <p className={css['card-content']}>{props.answer}</p>
 
       <div className={css['question-buttons']}>
         <div className={css['like-dislike']}>
@@ -15,9 +14,6 @@ function QueCard(props) {
           <Button>Dislike</Button>
         </div>
         <div className={css['del-edit']}>
-          <NavLink to={`/${props.id}/answer`} className={css['see-answers']}>
-            See Answers
-          </NavLink>
           {/* <Button>Delete</Button>
           <Button>Edit</Button> */}
         </div>
@@ -36,4 +32,4 @@ function QueCard(props) {
   );
 }
 
-export default QueCard;
+export default AnswerCard;

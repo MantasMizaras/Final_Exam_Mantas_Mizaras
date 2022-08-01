@@ -2,7 +2,8 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage/HomePage';
+import AnswerPage from './pages/AnswerPage/AnswerPage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 import QuestionsPage from './pages/QuestionsPage';
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route path={'/questions'}>
           <QuestionsPage />
+        </Route>
+        <Route path={'/:id/answer'}>
+          <AnswerPage />
         </Route>
         <Route path={'/add'}>
           <AskQuestPage />
