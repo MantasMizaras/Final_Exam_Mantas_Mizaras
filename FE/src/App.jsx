@@ -10,6 +10,7 @@ import QuestionsPage from './pages/QuestionsPage';
 import RegisterPage from './pages/RegisterPage';
 import { Toaster } from 'react-hot-toast';
 import AskQuestPage from './pages/AskQuestPage';
+import EditQuestPage from './pages/EditQuestPage/EditQuestPage';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path={'/questions'}>
           <QuestionsPage />
+        </Route>
+        <Route path={'/editQuestion/:id'}>
+          <EditQuestPage />
         </Route>
         <Route path={'/:id/answer'}>
           <AnswerPage />

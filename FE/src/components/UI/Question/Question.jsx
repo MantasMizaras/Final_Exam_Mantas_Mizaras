@@ -9,6 +9,11 @@ function QueCard(props) {
   console.log('userId ===', userId);
   console.log('isUserLoggedIn ===', isUserLoggedIn);
 
+  function handleValues() {
+    localStorage.setItem('title', props.title);
+    localStorage.setItem('content', props.content);
+  }
+
   return (
     <div className={css.card}>
       <div className={['card-text']}></div>
@@ -40,7 +45,14 @@ function QueCard(props) {
               Delete
             </Button>
           )}
-          <Button>Edit</Button>
+          <NavLink to={`/editQuestion/${props.id}`}>
+            {+userId.userId === props.user_id && isUserLoggedIn && (
+              <Button button primary onClick={handleValues}>
+                Edit
+              </Button>
+            )}
+          </NavLink>
+
           {/* <p className={css['card-edit']}>
             <strong>Edited at: </strong>
             {props.edited_at?.split('T').join(' ').split('.000Z')}{' '}
