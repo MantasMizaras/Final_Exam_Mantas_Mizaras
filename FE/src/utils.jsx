@@ -48,7 +48,25 @@ export async function myDeleteAuth(url, method = 'GET', token, data = null) {
     const dataInJs = await resp.json();
     return dataInJs;
   } catch (error) {
-    throw new Error('Error myFetchAuth', error);
+    throw new Error('Error myDeleteAuth', error);
+  }
+}
+
+export async function myEditAuth(url, method = 'GET', token, data = null) {
+  try {
+    const options = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    options.method = method === 'PATCH' ? 'PATCH' : 'GET';
+    options.body = data ? JSON.stringify(data) : null;
+    const resp = await fetch(url, options);
+    const dataInJs = await resp.json();
+    return dataInJs;
+  } catch (error) {
+    throw new Error('Error myEditAuth', error);
   }
 }
 

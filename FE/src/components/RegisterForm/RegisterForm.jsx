@@ -101,7 +101,7 @@ function RegisterForm() {
             <p className={css['invalid-feedback']}>{formik.errors.repeatPassword}</p>
           )}
         </div>
-        <Button>Register</Button>
+        <Button submit>Register</Button>
       </form>
     </div>
   );

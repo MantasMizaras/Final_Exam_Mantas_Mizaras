@@ -66,7 +66,7 @@ function AddQuestForm() {
           />
           {formik.touched.content && formik.errors.content && <p className={css['invalid-feedback']}>{formik.errors.content}</p>}
         </div>
-        <Button>Add</Button>
+        <Button submit>Add</Button>
       </form>
     </div>
   );
