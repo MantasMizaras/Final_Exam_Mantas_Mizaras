@@ -1,10 +1,15 @@
 import css from './Answer.module.css';
 import Button from '../Button/Button';
 import { useAuthCtx } from '../../../store/AuthContext';
+import { NavLink } from 'react-router-dom';
 
 function AnswerCard(props) {
   const userId = useAuthCtx();
   const { isUserLoggedIn } = useAuthCtx();
+
+  function handleValues() {
+    localStorage.setItem('answer', props.answer);
+  }
 
   return (
     <div className={css.card}>
@@ -23,7 +28,13 @@ function AnswerCard(props) {
               Delete
             </Button>
           )}
-          <Button>Edit</Button>
+          <NavLink to={`/editAnswer/${props.id}`}>
+            {+userId.userId === props.user_id && isUserLoggedIn && (
+              <Button button primary onClick={handleValues}>
+                Edit
+              </Button>
+            )}
+          </NavLink>
         </div>
         <div className={css['edited-at']}>
           <p className={css['card-edit']}>

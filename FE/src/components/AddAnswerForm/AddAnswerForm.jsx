@@ -13,7 +13,7 @@ const initValues = {
 };
 
 function AddAnswerForm() {
-  // const history = useHistory();
+  const history = useHistory();
   const { token } = useAuthCtx();
   const { id } = useParams();
   // const [answers, setAnswers] = useState([]);
@@ -34,7 +34,7 @@ function AddAnswerForm() {
       const addFetch = await myFetchAuth(`${baseUrl}/api/question/${id}/answer`, 'POST', token, values);
       if (addFetch === 'Answer succesfully added!') {
         toast.success('Your answer has been added!');
-        getAnswers();
+        history.go(0);
       }
       if (addFetch === 'Answer was not added!') {
         toast.error('Error while adding an answer. Please try again.');
