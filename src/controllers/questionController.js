@@ -1,6 +1,13 @@
 /* eslint-disable camelcase */
 /* eslint-disable object-curly-newline */
-const { showQuestions, createNewQuestion, patchQuestion, removeQuestion } = require('../model/questionModel');
+const {
+  showQuestions,
+  createNewQuestion,
+  patchQuestion,
+  removeQuestion,
+  getQuestAsc,
+  getQuestDesc,
+} = require('../model/questionModel');
 
 const getQuestions = async (req, res) => {
   try {
@@ -60,4 +67,22 @@ const deleteQuestion = async (req, res) => {
   }
 };
 
-module.exports = { getQuestions, postQuestion, updateQuestion, deleteQuestion };
+const showQuestAsc = async (req, res) => {
+  try {
+    const questArr = await getQuestAsc();
+    res.json(questArr);
+  } catch (error) {
+    res.sendStatus(500);
+  }
+};
+
+const showQuestDesc = async (req, res) => {
+  try {
+    const questArr = await getQuestDesc();
+    res.json(questArr);
+  } catch (error) {
+    res.sendStatus(500);
+  }
+};
+
+module.exports = { getQuestions, postQuestion, updateQuestion, deleteQuestion, showQuestAsc, showQuestDesc };

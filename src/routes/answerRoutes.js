@@ -13,4 +13,8 @@ answerRoutes.patch('/answer/:id', validateAnswer, validateToken, controller.upda
 
 answerRoutes.delete('/answer/:id', validateToken, controller.deleteAnswer);
 
+answerRoutes.get('/answerasc', controller.showAnswerAsc);
+
+answerRoutes.get('/answerdesc', controller.showAnswerDesc);
+
 module.exports = answerRoutes;

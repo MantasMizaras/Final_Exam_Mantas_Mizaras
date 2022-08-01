@@ -36,9 +36,20 @@ function removeAnswer(id, user_id) {
   return executeDb(sql, [id, user_id]);
 }
 
+function getAnswerDesc() {
+  const sql = 'SELECT * FROM answers ORDER BY created_at ASC';
+  return executeDb(sql);
+}
+function getAnswerAsc() {
+  const sql = 'SELECT * FROM answers ORDER BY created_at DESC';
+  return executeDb(sql);
+}
+
 module.exports = {
   showAnswers,
   createNewAnswer,
   patchAnswer,
   removeAnswer,
+  getAnswerAsc,
+  getAnswerDesc,
 };

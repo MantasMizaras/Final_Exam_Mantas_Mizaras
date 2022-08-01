@@ -75,4 +75,14 @@ DELETE http://localhost:3000/api/answer/6
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1OTAxMzA2OSwiZXhwIjoxNjU5MDIzODY5fQ.KbzlC0a21ROjNZtFEd9F3Lr3oQbCS8cnm_LcSdwthtc
 
+### ASC&DESC
+###
+GET http://localhost:3000/api/questionasc
+###
+GET http://localhost:3000/api/questiondesc
 
+###
+GET http://localhost:3000/api/answerasc
+
+###
+GET http://localhost:3000/api/answerdesc

@@ -37,9 +37,20 @@ function removeQuestion(id, user_id) {
   return executeDb(sql, [id, user_id]);
 }
 
+function getQuestAsc() {
+  const sql = 'SELECT * FROM questions ORDER BY created_at ASC';
+  return executeDb(sql);
+}
+function getQuestDesc() {
+  const sql = 'SELECT * FROM questions ORDER BY created_at DESC';
+  return executeDb(sql);
+}
+
 module.exports = {
   showQuestions,
   createNewQuestion,
   patchQuestion,
   removeQuestion,
+  getQuestAsc,
+  getQuestDesc,
 };

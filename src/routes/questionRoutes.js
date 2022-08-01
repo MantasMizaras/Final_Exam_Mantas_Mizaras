@@ -14,4 +14,8 @@ questionRoutes.patch('/question/:id', validateQuestion, validateToken, controlle
 
 questionRoutes.delete('/question/:id', validateToken, controller.deleteQuestion);
 
+questionRoutes.get('/questionasc', controller.showQuestAsc);
+
+questionRoutes.get('/questiondesc', controller.showQuestDesc);
+
 module.exports = questionRoutes;

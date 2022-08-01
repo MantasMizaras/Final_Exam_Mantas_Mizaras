@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 /* eslint-disable object-curly-newline */
-const { showAnswers, createNewAnswer, patchAnswer, removeAnswer } = require('../model/answerModel');
+const { showAnswers, createNewAnswer, patchAnswer, removeAnswer, getAnswerAsc, getAnswerDesc } = require('../model/answerModel');
 
 const getAnswers = async (req, res) => {
   const { id } = req.params;
@@ -62,4 +62,22 @@ const deleteAnswer = async (req, res) => {
   }
 };
 
-module.exports = { getAnswers, postAnswer, updateAnswer, deleteAnswer };
+const showAnswerAsc = async (req, res) => {
+  try {
+    const answerArr = await getAnswerAsc();
+    res.json(answerArr);
+  } catch (error) {
+    res.sendStatus(500);
+  }
+};
+
+const showAnswerDesc = async (req, res) => {
+  try {
+    const answerArr = await getAnswerDesc();
+    res.json(answerArr);
+  } catch (error) {
+    res.sendStatus(500);
+  }
+};
+
+module.exports = { getAnswers, postAnswer, updateAnswer, deleteAnswer, showAnswerAsc, showAnswerDesc };
