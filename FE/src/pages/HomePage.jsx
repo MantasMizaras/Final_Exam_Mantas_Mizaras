@@ -4,7 +4,7 @@ import { useAuthCtx } from '../store/AuthContext';
 import { useHistory } from 'react-router-dom';
 import Question from '../components/UI/Question/Question';
 import css from '../pages/HomePage.module.css';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 
 function HomePage() {
   const history = useHistory();
@@ -29,7 +29,7 @@ function HomePage() {
     <div className={css['container']}>
       <h1 className={css['title']}>All questions</h1>
       <div className={css['cards-display']}>
-        {questions.length > 0 ? questions.map((sObj) => <Question key={sObj.id} {...sObj} />) : toast.loading('Waiting...')}
+        {questions.length > 0 ? questions.map((sObj) => <Question key={sObj.id} {...sObj} />) : <p>Waiting for questions</p>}
       </div>
     </div>
   );

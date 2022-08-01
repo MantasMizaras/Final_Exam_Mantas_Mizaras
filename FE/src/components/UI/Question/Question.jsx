@@ -20,7 +20,7 @@ function QueCard(props) {
         <div className={css['edited-at']}>
           <p className={css['card-edit']}>
             <strong>Edited at: </strong>
-            {props.edited_at.split('T').join(' ').split('.000Z')}{' '}
+            {props.edited_at?.split('T').join(' ').split('.000Z')}{' '}
           </p>
           <p className={css['card-edit']}>
             <strong>Created at: </strong>

@@ -21,7 +21,6 @@ export async function myFetchAuth(url, method = 'GET', token, data = null) {
     const options = {
       headers: {
         'Content-Type': 'application/json',
-
         Authorization: `Bearer ${token}`,
       },
     };
@@ -30,7 +29,9 @@ export async function myFetchAuth(url, method = 'GET', token, data = null) {
     const resp = await fetch(url, options);
     const dataInJs = await resp.json();
     return dataInJs;
-  } catch (error) {}
+  } catch (error) {
+    throw new Error('error myFetchAuth', error);
+  }
 }
 
 export const baseUrl = import.meta.env.VITE_BACKEND_URL;
