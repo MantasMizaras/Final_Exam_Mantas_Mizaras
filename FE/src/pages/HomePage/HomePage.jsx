@@ -5,6 +5,7 @@ import { useAuthCtx } from '../../store/AuthContext';
 import css from '../HomePage/HomePage.module.css';
 import QueCard from '../../components/UI/Question/Question';
 import toast from 'react-hot-toast';
+import Button from '../../components/UI/Button/Button';
 
 function HomePage() {
   // const history = useHistory();
@@ -31,6 +32,21 @@ function HomePage() {
     }
   }
 
+  const getQuestASC = async () => {
+    const fetchResult = await myFetch(`${baseUrl}/api/questionasc`);
+    console.log('fetchResult ===', fetchResult);
+    if (Array.isArray(fetchResult)) {
+      setQuestions(fetchResult);
+    }
+  };
+  const getQuestDESC = async () => {
+    const fetchResult = await myFetch(`${baseUrl}/api/questiondesc`);
+    console.log('fetchResult ===', fetchResult);
+    if (Array.isArray(fetchResult)) {
+      setQuestions(fetchResult);
+    }
+  };
+
   useEffect(() => {
     getQuestions();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -40,6 +56,11 @@ function HomePage() {
   return (
     <div className={css['container']}>
       <h1 className={css['title']}>All questions</h1>
+      <div>
+        <h3>Sort by creating time </h3>
+        <Button onClick={getQuestASC}>ASC</Button>
+        <Button onClick={getQuestDESC}>DESC</Button>
+      </div>
       <div className={css['cards-display']}>
         {questions.length > 0 ? (
           questions.map((sObj) => <QueCard key={sObj.id} {...sObj} onDelete={deleteQuestion} />)

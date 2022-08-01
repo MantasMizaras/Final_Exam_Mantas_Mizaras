@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { baseUrl, myDeleteAuth, myFetchAuth } from '../../utils';
+import { baseUrl, myDeleteAuth, myFetch, myFetchAuth } from '../../utils';
 import { useAuthCtx } from '../../store/AuthContext';
 import { useHistory, useParams } from 'react-router-dom';
 import AnswerCard from '../../components/UI/Answer/Answer';
 import css from '../AnswerPage/AnswerPage.module.css';
 import AddAnswerForm from '../../components/AddAnswerForm/AddAnswerForm';
 import toast from 'react-hot-toast';
+import Button from '../../components/UI/Button/Button';
 
 function AnswerPage() {
   //   const history = useHistory();
@@ -19,7 +20,7 @@ function AnswerPage() {
   const questTitle = title;
 
   const getAnswers = async (values) => {
-    const fetchResult = await myFetchAuth(`${baseUrl}/api/question/${id}/answer`, 'GET', values);
+    const fetchResult = await myFetch(`${baseUrl}/api/question/${id}/answer`, 'GET', values);
     if (Array.isArray(fetchResult)) {
       setAnswers(fetchResult);
     }
@@ -37,6 +38,21 @@ function AnswerPage() {
     }
   }
 
+  const getAnswerASC = async () => {
+    const fetchResult = await myFetch(`${baseUrl}/api/answerasc`);
+    console.log('fetchResult ===', fetchResult);
+    if (Array.isArray(fetchResult)) {
+      setAnswers(fetchResult);
+    }
+  };
+  const getAnswertDESC = async () => {
+    const fetchResult = await myFetch(`${baseUrl}/api/answerdesc`);
+    console.log('fetchResult ===', fetchResult);
+    if (Array.isArray(fetchResult)) {
+      setAnswers(fetchResult);
+    }
+  };
+
   useEffect(() => {
     getAnswers();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -48,6 +64,11 @@ function AnswerPage() {
       <h1 className={css['title']}>
         (`All answers question title: ${questTitle} , content: ${content}`)
       </h1>
+      <div>
+        <h3>Sort by creating time </h3>
+        <Button onClick={getAnswerASC}>ASC</Button>
+        <Button onClick={getAnswertDESC}>DESC</Button>
+      </div>
       <div className={css['cards-display']}>
         {answers.length > 0 ? (
           answers.map((sObj) => <AnswerCard key={sObj.id} {...sObj} onDelete={deleteAnswer} />)
