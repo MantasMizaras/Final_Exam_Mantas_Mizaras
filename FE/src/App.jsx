@@ -6,13 +6,13 @@ import QuestionPage from './pages/QuestionPage/QuestionPage';
 import AnswerPage from './pages/AnswerPage/AnswerPage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-// import QuestionsPageBEHOME from './pages/QuestionsPageBEHOME';
 import RegisterPage from './pages/RegisterPage';
 import { Toaster } from 'react-hot-toast';
 import AskQuestPage from './pages/AskQuestPage';
 import EditQuestPage from './pages/EditQuestPage/EditQuestPage';
 import EditAnswerPage from './pages/EditAnswerPage/EditAnswerPage';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
   return (
@@ -41,9 +41,9 @@ function App() {
         <ProtectedRoute path={'/add'}>
           <AskQuestPage />
         </ProtectedRoute>
-        {/* <Route exact path={'/'}>
+        <Route exact path={'/'}>
           <HomePage />
-        </Route> */}
+        </Route>
         <Route path={'*'}>
           <NotFoundPage />
         </Route>
