@@ -16,7 +16,7 @@ import EditAnswerPage from './pages/EditAnswerPage/EditAnswerPage';
 function App() {
   return (
     <div className='App'>
-      <Toaster />
+      <Toaster autoClose={4000} />
       <Header />
       <h1>Hello world</h1>
       <Switch>
@@ -35,7 +35,7 @@ function App() {
         <Route path={'/editAnswer/:id'}>
           <EditAnswerPage />
         </Route>
-        <Route path={'/:id/answer'}>
+        <Route path={'/question/:id/answer'}>
           <AnswerPage />
         </Route>
         <Route path={'/add'}>

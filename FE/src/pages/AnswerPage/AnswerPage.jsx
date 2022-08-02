@@ -9,15 +9,24 @@ import toast from 'react-hot-toast';
 import Button from '../../components/UI/Button/Button';
 
 function AnswerPage() {
+  const title = localStorage.getItem('title');
+  const content = localStorage.getItem('content');
+
+  // const [updatedTitle, setUpdatedTitle] = useState({ title, content });
+
+  // useEffect(() => {
+  //   setUpdatedTitle({ title, content });
+  // }, [title, content]);
+
   //   const history = useHistory();
   const { token } = useAuthCtx();
-  const { id, title, content } = useParams();
+  const { id } = useParams();
   //   if (!token) history.push('/login');
   const [answers, setAnswers] = useState([]);
 
-  //   console.log('id, title, content  ===', id, title, content);
+  console.log('id, title, content  ===', id, title, content);
 
-  const questTitle = title;
+  // const questTitle = title;
 
   const getAnswers = async (values) => {
     const fetchResult = await myFetch(`${baseUrl}/api/question/${id}/answer`, 'GET', values);
@@ -61,9 +70,9 @@ function AnswerPage() {
   // if (answers.length !== 0) {
   return (
     <div className={css['container']}>
-      <h1 className={css['title']}>
-        (`All answers question title: ${questTitle} , content: ${content}`)
-      </h1>
+      <h3 className={css['title']}>Question: {title}</h3>
+      <p>Content: {content}</p>
+
       <div>
         <h3>Sort by creating time </h3>
         <Button onClick={getAnswerASC}>ASC</Button>
@@ -76,7 +85,7 @@ function AnswerPage() {
           <p>No answers yet.</p>
         )}
       </div>
-      <AddAnswerForm />
+      <AddAnswerForm onSubmit={getAnswers} />
     </div>
   );
   // } else {

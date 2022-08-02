@@ -26,21 +26,21 @@ GET http://localhost:3000/api/question
 ###
 POST http://localhost:3000/api/question
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1OTAwMjkxNCwiZXhwIjoxNjU5MDEzNzE0fQ.viE9zNk9pY4cAH24_Z39_UE9n9tDGFwAPuqum4cNA3o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1OTQyNDc3NywiZXhwIjoxNjU5NDM1NTc3fQ.f5QMJc_T7K9Q0MNAwwGPnf9b55Z3z9cvtGmwHD-CX3M
 
 {
-  "title": "Q&ADE",
-  "content": "Q&A following"
+  "title": "Question from rest rest",
+  "content": "How it looks from rest rest today"
 }
 
 ###
-PATCH http://localhost:3000/api/question/7
+PATCH http://localhost:3000/api/question/18
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1OTAxMzUwMywiZXhwIjoxNjU5MDI0MzAzfQ.LDQl5kMOEdhqcGM-FfNTrm1lTKLsxR9xLuFZzBos-KQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1OTQyNDc3NywiZXhwIjoxNjU5NDM1NTc3fQ.f5QMJc_T7K9Q0MNAwwGPnf9b55Z3z9cvtGmwHD-CX3M
 
 {
-  "title": "Updating",
-  "content": "Updating just from right accout"
+  "title": "Updating updating",
+  "content": "Updating just from right accou updatingt"
 }
 
 ###
