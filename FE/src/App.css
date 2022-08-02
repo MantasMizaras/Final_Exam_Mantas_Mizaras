@@ -1,4 +1,9 @@
 body {
-  background: #a1aac3;
+  background: #316b66;
   font-family: 'Lucida Console', 'Courier New', monospace;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
 }
