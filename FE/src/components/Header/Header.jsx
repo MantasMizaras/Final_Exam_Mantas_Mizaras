@@ -25,7 +25,7 @@ function Header(props) {
                 Ask Question!
               </NavLink>
               <div className={css['nav-control-display']}></div>
-              {<p className={css.email}>You are logged in as: {userEmail}</p>}
+              {<p className={css.email}>Logged in: {userEmail}</p>}
               <NavLink
                 onClick={() => {
                   logout();

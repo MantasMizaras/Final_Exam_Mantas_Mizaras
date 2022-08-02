@@ -1,5 +1,6 @@
 .header {
-  background-color: rgb(72, 72, 72);
+  /* background-color: rgb(72, 72, 72); */
+  background-color: #6e411d;
   color: snow;
   display: flex;
   justify-content: space-between;
@@ -15,6 +16,7 @@
 
 .nav-link:last-child {
   margin-right: 0.3em;
+  color: tomato;
 }
 
 .nav-link:hover {
@@ -35,6 +37,6 @@
 
 .email {
   font-size: 1rem;
-  color: aliceblue;
+  color: #fc9f36e6;
   padding: 0 0.5rem;
 }

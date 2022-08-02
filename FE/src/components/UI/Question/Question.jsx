@@ -16,23 +16,20 @@ function QueCard(props) {
 
   return (
     <div className={css.card}>
-      {/* <div className={['card-text']}></div> */}
       <div className={css['card-title']}>
         <p>
           <strong>{props.title}</strong>
         </p>
-        {/* </div> */}
-        {/* <div className={css['card-content']}> */}
         <p>
           <strong>{props.content}</strong>
         </p>
       </div>
       <NavLink onClick={handleValues} to={`/question/${props.id}/answer`} className={css['see-answers']}>
-        See Answers
+        Check answers
       </NavLink>
 
-      <div className={css['question-buttons']}>
-        <div className={css['edited-at']}>
+      <div className={css['question-created']}>
+        <div>
           <p className={css['card-edit']}>
             {props.edited_at && <strong>Edited at: </strong>}
             {props.edited_at?.split('T').join(' ').split('.000Z')}
@@ -42,14 +39,10 @@ function QueCard(props) {
             {props.created_at.split('T').join(' ').split('.000Z')}
           </p>
         </div>
-        <div className={css['del-edit']}>
-          {/* <NavLink to={`/${props.id}/answer`} className={css['see-answers']}>
-            See Answers
-          </NavLink> */}
-        </div>
+        <div className={css['del-edit']}></div>
         <div className={css['edited-at']}>
           {+userId.userId === props.user_id && isUserLoggedIn && (
-            <Button button primary onClick={() => props.onDelete(props.id)}>
+            <Button button secondary onClick={() => props.onDelete(props.id)}>
               Delete
             </Button>
           )}
@@ -60,15 +53,6 @@ function QueCard(props) {
               </Button>
             )}
           </NavLink>
-
-          {/* <p className={css['card-edit']}>
-            <strong>Edited at: </strong>
-            {props.edited_at?.split('T').join(' ').split('.000Z')}{' '}
-          </p>
-          <p className={css['card-edit']}>
-            <strong>Created at: </strong>
-            {props.created_at.split('T').join(' ').split('.000Z')}
-          </p> */}
         </div>
       </div>
     </div>

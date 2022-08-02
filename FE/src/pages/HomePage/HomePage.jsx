@@ -55,7 +55,7 @@ function HomePage() {
   // if (questions.length !== 0) {
   return (
     <div className={css['container']}>
-      <h1 className={css['title']}>All questions</h1>
+      <h1 className={css['title']}>QUESTIONS</h1>
       <div>
         <h3>Sort by creating time </h3>
         <Button onClick={getQuestASC}>ASC</Button>

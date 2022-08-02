@@ -11,7 +11,8 @@
 } */
 
 .card {
-  background: #1f2124;
+  /* background: #1f2124; */
+  background: #6e411d;
   box-shadow: 2px 2px 20px rgba(63, 55, 55, 0.4);
   border-radius: 0.4rem;
   margin: 1.1rem;
@@ -24,7 +25,7 @@
 
 .see-answers {
   text-decoration: none;
-  color: rgb(94, 255, 40);
+  color: #fc9f36e6;
 }
 
 .card:hover {
@@ -35,7 +36,7 @@
   text-align: right;
 }
 
-.question-buttons {
+.question-created {
   display: flex;
   justify-content: space-between;
   align-items: center;
