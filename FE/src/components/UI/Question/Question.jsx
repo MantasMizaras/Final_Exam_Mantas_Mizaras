@@ -16,10 +16,18 @@ function QueCard(props) {
 
   return (
     <div className={css.card}>
-      <div className={['card-text']}></div>
-      <h3 className={css['card-title']}>{props.title}</h3>
-      <p className={css['card-content']}>{props.content}</p>
-      <NavLink to={`/${props.id}/answer`} className={css['see-answers']}>
+      {/* <div className={['card-text']}></div> */}
+      <div className={css['card-title']}>
+        <p>
+          <strong>{props.title}</strong>
+        </p>
+        {/* </div> */}
+        {/* <div className={css['card-content']}> */}
+        <p>
+          <strong>{props.content}</strong>
+        </p>
+      </div>
+      <NavLink onClick={handleValues} to={`/question/${props.id}/answer`} className={css['see-answers']}>
         See Answers
       </NavLink>
 

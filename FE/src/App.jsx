@@ -18,7 +18,6 @@ function App() {
     <div className='App'>
       <Toaster autoClose={4000} />
       <Header />
-      <h1>Hello world</h1>
       <Switch>
         <Route path={'/register'}>
           <RegisterPage />
