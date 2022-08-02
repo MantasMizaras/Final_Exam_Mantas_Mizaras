@@ -37,7 +37,7 @@ function EditQuestPage() {
 
       if (editResult === 'Question succesfully updated!') {
         toast.success('Question was edited.');
-        history.replace('/');
+        history.replace('/questions');
       }
 
       if (editResult === 'Question was not updated!') {
@@ -81,7 +81,7 @@ function EditQuestPage() {
         <Button submit primary>
           Update
         </Button>
-        <NavLink to={'/'} className={css['nav-link']}>
+        <NavLink to={'/questions'} className={css['nav-link']}>
           Back to questions
         </NavLink>
       </form>

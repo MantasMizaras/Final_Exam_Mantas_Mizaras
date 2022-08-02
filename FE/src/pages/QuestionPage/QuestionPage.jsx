@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { baseUrl, myDeleteAuth, myFetch } from '../../utils';
 import { useAuthCtx } from '../../store/AuthContext';
-import css from '../HomePage/HomePage.module.css';
+import css from '../QuestionPage/QuestionPage.module.css';
 import QueCard from '../../components/UI/Question/Question';
 import toast from 'react-hot-toast';
 import Button from '../../components/UI/Button/Button';
 
-function HomePage() {
+function QuestionPage() {
   const { token } = useAuthCtx();
   const [questions, setQuestions] = useState([]);
 
@@ -70,4 +70,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default QuestionPage;

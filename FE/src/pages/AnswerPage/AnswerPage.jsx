@@ -126,7 +126,7 @@ function AnswerPage() {
             </div>
             <Button submit>Add</Button>
           </form>
-          <NavLink to={'/'} className={css['nav-link']}>
+          <NavLink to={'/questions'} className={css['nav-link']}>
             Back to Questions
           </NavLink>
         </div>

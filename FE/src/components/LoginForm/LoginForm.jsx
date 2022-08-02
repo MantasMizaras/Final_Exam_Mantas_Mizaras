@@ -30,7 +30,7 @@ function LoginForm() {
       if (fetchLoginResult.success === true) {
         toast.success(`Successfully logged in: ${values.email}`);
         ctx.login(fetchLoginResult.token, values.email, fetchLoginResult.payload.userId);
-        history.replace('/');
+        history.replace('/questions');
       }
 
       if (!fetchLoginResult.token) {

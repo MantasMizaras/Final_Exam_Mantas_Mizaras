@@ -2,11 +2,11 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import HomePage from './pages/HomePage/HomePage';
+import QuestionPage from './pages/QuestionPage/QuestionPage';
 import AnswerPage from './pages/AnswerPage/AnswerPage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import QuestionsPageBEHOME from './pages/QuestionsPageBEHOME';
+// import QuestionsPageBEHOME from './pages/QuestionsPageBEHOME';
 import RegisterPage from './pages/RegisterPage';
 import { Toaster } from 'react-hot-toast';
 import AskQuestPage from './pages/AskQuestPage';
@@ -27,7 +27,7 @@ function App() {
           <LoginPage />
         </Route>
         <Route path={'/questions'}>
-          <QuestionsPageBEHOME />
+          <QuestionPage />
         </Route>
         <ProtectedRoute path={'/editQuestion/:id'}>
           <EditQuestPage />
@@ -41,9 +41,9 @@ function App() {
         <ProtectedRoute path={'/add'}>
           <AskQuestPage />
         </ProtectedRoute>
-        <Route exact path={'/'}>
+        {/* <Route exact path={'/'}>
           <HomePage />
-        </Route>
+        </Route> */}
         <Route path={'*'}>
           <NotFoundPage />
         </Route>

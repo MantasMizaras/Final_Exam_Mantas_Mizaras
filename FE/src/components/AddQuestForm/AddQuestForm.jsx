@@ -31,7 +31,7 @@ function AddQuestForm() {
       if (addFetch === 'Question succesfully created!') {
         {
           toast.success('New question has been added!');
-          history.replace('/');
+          history.replace('/questions');
         }
         if (addFetch === 'Question was not added!') {
           toast.error('Error while adding a question. Please try again.');
