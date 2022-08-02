@@ -12,6 +12,7 @@ import { Toaster } from 'react-hot-toast';
 import AskQuestPage from './pages/AskQuestPage';
 import EditQuestPage from './pages/EditQuestPage/EditQuestPage';
 import EditAnswerPage from './pages/EditAnswerPage/EditAnswerPage';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 function App() {
   return (
@@ -28,18 +29,18 @@ function App() {
         <Route path={'/questions'}>
           <QuestionsPage />
         </Route>
-        <Route path={'/editQuestion/:id'}>
+        <ProtectedRoute path={'/editQuestion/:id'}>
           <EditQuestPage />
-        </Route>
-        <Route path={'/editAnswer/:id'}>
+        </ProtectedRoute>
+        <ProtectedRoute path={'/editAnswer/:id'}>
           <EditAnswerPage />
-        </Route>
+        </ProtectedRoute>
         <Route path={'/question/:id/answer'}>
           <AnswerPage />
         </Route>
-        <Route path={'/add'}>
+        <ProtectedRoute path={'/add'}>
           <AskQuestPage />
-        </Route>
+        </ProtectedRoute>
         <Route exact path={'/'}>
           <HomePage />
         </Route>
