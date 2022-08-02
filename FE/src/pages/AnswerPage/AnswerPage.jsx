@@ -98,8 +98,8 @@ function AnswerPage() {
   // if (answers.length !== 0) {
   return (
     <div className={css['container']}>
-      <h3 className={css['title']}>Question:{updatedTitle.title}</h3>
-      <p>Content: {updatedTitle.content}</p>
+      <h2 className={css['title']}>Question - {updatedTitle.title}</h2>
+      <h3 className={css['content']}>{updatedTitle.content}</h3>
 
       <div>
         <h3>Sort by creating time </h3>
@@ -114,26 +114,29 @@ function AnswerPage() {
         )}
       </div>
       {/* <AddAnswerForm onSubmit={getAnswers} /> */}
+
       <div className={css['form-container']}>
-        <form onSubmit={formik.handleSubmit}>
+        <h3 className={css['form-title']}>Know answer? Post it!</h3>
+
+        <form onSubmit={formik.handleSubmit} className={css['add-form']}>
           <div className={css['form-group']}>
-            <label htmlFor='answer'>Know answer? Post it!</label>
+            <label htmlFor='answer'></label>
             <textarea
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.answer}
+              type='text'
               className={formik.touched.answer && formik.errors.answer ? css['is-invalid'] : ''}
-              type='answer'
               id='answer'
               name='answer'
             />
             {formik.touched.answer && formik.errors.answer && <p className={css['invalid-feedback']}>{formik.errors.answer}</p>}
           </div>
           <Button submit>Add</Button>
-          <NavLink to={'/'} className={css['nav-link']}>
-            Back to Questions
-          </NavLink>
         </form>
+        <NavLink to={'/'} className={css['nav-link']}>
+          Back to Questions
+        </NavLink>
       </div>
     </div>
   );
