@@ -28,8 +28,11 @@ function EditQuestPage() {
   const formik = useFormik({
     initialValues: updatedTitle,
     validationSchema: Yup.object({
-      title: Yup.string().min(5, 'At least 5 characters').max(255, 'Maximum title length reached').required(),
-      content: Yup.string().min(5, 'At least 5 characters').max(500, 'Maximum content length reached').required(),
+      title: Yup.string().min(5, 'At least 5 characters').max(255, 'Maximum title length reached').required('Title required'),
+      content: Yup.string()
+        .min(5, 'At least 5 characters')
+        .max(500, 'Maximum content length reached')
+        .required('Content required'),
     }),
 
     onSubmit: async (values) => {

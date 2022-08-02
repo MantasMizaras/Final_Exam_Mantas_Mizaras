@@ -17,8 +17,14 @@ function AddQuestForm() {
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
-      title: Yup.string().min(5, 'At least 5 symbols are required').max(255, 'Up to 255 symbols are allowed').required(),
-      content: Yup.string().min(20, 'At least 20 symbols are required').max(555, 'Up to 555 symbols are allowed').required(),
+      title: Yup.string()
+        .min(5, 'At least 5 symbols are required')
+        .max(255, 'Up to 255 symbols are allowed')
+        .required('Title required'),
+      content: Yup.string()
+        .min(20, 'At least 20 symbols are required')
+        .max(555, 'Up to 555 symbols are allowed')
+        .required('Content required'),
     }),
     onSubmit: async (values) => {
       const addFetch = await myFetchAuth(`${baseUrl}/api/question`, 'POST', token, values);

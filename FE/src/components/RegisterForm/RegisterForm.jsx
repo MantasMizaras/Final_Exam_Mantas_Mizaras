@@ -53,18 +53,22 @@ function RegisterForm() {
           <label htmlFor='nickname'>Nickname</label>
           <input
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.nickname}
             type='text'
             id='nickname'
             name='nickname'
             className={formik.touched.nickname && formik.errors.nickname ? css['is-invalid'] : ''}
           />
-          {formik.touched.email && formik.errors.email && <p className={css['invalid-feedback']}>{formik.errors.email}</p>}
+          {formik.touched.nickname && formik.errors.nickname && (
+            <p className={css['invalid-feedback']}>{formik.errors.nickname}</p>
+          )}
         </div>
         <div className={css['form-group']}>
           <label htmlFor='email'>Email</label>
           <input
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.email}
             type='email'
             id='email'
@@ -77,6 +81,7 @@ function RegisterForm() {
           <label htmlFor='password'>Password</label>
           <input
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.password}
             type='password'
             id='password'
@@ -91,6 +96,7 @@ function RegisterForm() {
           <label htmlFor='repeatPassword'>Repeat password</label>
           <input
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.repeatPassword}
             type='password'
             id='repeatPassword'

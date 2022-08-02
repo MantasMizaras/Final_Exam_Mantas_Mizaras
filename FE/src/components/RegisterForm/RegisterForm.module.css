@@ -7,6 +7,11 @@
   margin-top: 1rem;
 }
 
+input,
+textarea {
+  margin-bottom: 7px;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;

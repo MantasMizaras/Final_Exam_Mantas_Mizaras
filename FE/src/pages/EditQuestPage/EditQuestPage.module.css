@@ -40,6 +40,7 @@ textarea {
 
 .add-form textarea {
   resize: vertical;
+  min-height: 3rem;
 }
 
 .form-container button {

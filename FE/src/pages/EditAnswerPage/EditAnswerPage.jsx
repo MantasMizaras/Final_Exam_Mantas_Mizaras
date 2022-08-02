@@ -26,7 +26,10 @@ function EditAnswerPage() {
   const formik = useFormik({
     initialValues: updatedAnswer,
     validationSchema: Yup.object({
-      answer: Yup.string().min(10, 'At least 10 symbols are required').max(555, 'Up to 555 symbols are allowed').required(),
+      answer: Yup.string()
+        .min(10, 'At least 10 symbols are required')
+        .max(555, 'Up to 555 symbols are allowed')
+        .required('Answer required'),
     }),
 
     onSubmit: async (values) => {
@@ -51,7 +54,7 @@ function EditAnswerPage() {
       <form onSubmit={formik.handleSubmit} className={css['add-form']}>
         <div className={css['form-group']}>
           <label htmlFor='answer'>Edit answer</label>
-          <input
+          <textarea
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.answer}

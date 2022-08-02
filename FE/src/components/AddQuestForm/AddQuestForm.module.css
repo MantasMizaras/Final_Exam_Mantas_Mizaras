@@ -23,6 +23,7 @@
   border: 0.02rem solid rgb(214, 48, 19);
 }
 
-.form-container textarea {
+.form-group textarea {
   resize: vertical;
+  min-height: 4rem;
 }
