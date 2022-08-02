@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { NavLink, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
 import css from './EditAnswerPage.module.css';
@@ -12,10 +12,6 @@ function EditAnswerPage() {
   const answer = localStorage.getItem('answer');
 
   const [updatedAnswer, setUpdatedAnswer] = useState({ answer });
-
-  useEffect(() => {
-    setUpdatedAnswer({ answer });
-  }, [answer]);
 
   const history = useHistory();
   const { token } = useAuthCtx();
@@ -45,6 +41,10 @@ function EditAnswerPage() {
     },
   });
 
+  useEffect(() => {
+    setUpdatedAnswer({ answer });
+  }, [answer]);
+
   return (
     <div className={css['form-container']}>
       <h3 className={css['form-title']}>Edit an answer</h3>
@@ -66,10 +66,10 @@ function EditAnswerPage() {
         <Button submit primary>
           Update
         </Button>
-        <NavLink to={'/'} className={css['nav-link']}>
-          Back to questions
-        </NavLink>
       </form>
+      <Button submit primary onClick={() => history.goBack()}>
+        Back to answers
+      </Button>
     </div>
   );
 }

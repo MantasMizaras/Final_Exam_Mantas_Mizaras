@@ -1,11 +1,11 @@
 .form-container {
   max-width: 30rem;
   margin: 0 auto;
-  box-shadow: 0.2rem 0.5em 0.9rem rgb(117, 70, 0);
+  box-shadow: 2rem 3em 4rem rgba(11, 11, 11, 0.421);
   border-radius: 0.3rem;
   padding: 1rem;
-  margin-top: 1rem;
-  background-color: rgb(206, 206, 206);
+  margin-top: 3rem;
+  background-color: #6e411d;
 }
 
 .form-group {

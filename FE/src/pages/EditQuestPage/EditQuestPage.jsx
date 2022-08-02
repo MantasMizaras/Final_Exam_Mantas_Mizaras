@@ -49,7 +49,7 @@ function EditQuestPage() {
 
   return (
     <div className={css['form-container']}>
-      <h3 className={css['form-title']}>Edit a question</h3>
+      <h3 className={css['form-title']}>Edit question</h3>
 
       <form onSubmit={formik.handleSubmit} className={css['add-form']}>
         <div className={css['form-group']}>

@@ -13,6 +13,7 @@
   border: 0;
   padding: 0.5rem 2rem;
   margin-top: 0.3rem;
+  border-radius: 0.1rem;
 }
 
 .primary:hover {
@@ -25,6 +26,7 @@
   border: 0;
   padding: 0.5rem 2rem;
   margin-top: 0.3rem;
+  border-radius: 0.1rem;
 }
 
 .secondary:hover {

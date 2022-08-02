@@ -115,12 +115,10 @@ function AnswerPage() {
       </div>
       {/* <AddAnswerForm onSubmit={getAnswers} /> */}
       <div className={css['form-container']}>
-        <h1>Answer</h1>
-
         <form onSubmit={formik.handleSubmit}>
           <div className={css['form-group']}>
-            <label htmlFor='answer'>Answer</label>
-            <input
+            <label htmlFor='answer'>Know answer? Post it!</label>
+            <textarea
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.answer}
@@ -139,6 +137,15 @@ function AnswerPage() {
       </div>
     </div>
   );
+  // } else {
+  //   return (
+  //     <div>
+  //       <h1 className={css['title']}>Your questions</h1>
+  //       <div className={css['container']}>
+  //         <h3 className={css['empty-page-text']}>You don't have any questions added.</h3>
+  //       </div>
+  //     </div>
+  //   );
 }
 
 export default AnswerPage;
