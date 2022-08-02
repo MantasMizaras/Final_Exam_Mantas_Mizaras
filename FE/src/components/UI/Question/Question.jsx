@@ -6,8 +6,6 @@ import { useAuthCtx } from '../../../store/AuthContext';
 function QueCard(props) {
   const userId = useAuthCtx();
   const { isUserLoggedIn } = useAuthCtx();
-  console.log('userId ===', userId);
-  console.log('isUserLoggedIn ===', isUserLoggedIn);
 
   function handleValues() {
     localStorage.setItem('title', props.title);
@@ -39,7 +37,11 @@ function QueCard(props) {
             {props.created_at.split('T').join(' ').split('.000Z')}
           </p>
         </div>
-        <div className={css['del-edit']}></div>
+        {/* <div className={css['del-edit']}></div> */}
+        {/* <div className={css['like-dislike']}>
+          <Button>Like</Button>
+          <Button>Dislike</Button>
+        </div> */}
         <div className={css['edited-at']}>
           {+userId.userId === props.user_id && isUserLoggedIn && (
             <Button button secondary onClick={() => props.onDelete(props.id)}>
