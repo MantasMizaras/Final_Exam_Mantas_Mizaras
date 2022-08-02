@@ -22,7 +22,7 @@ function HomePage() {
 
   async function deleteQuestion(id) {
     const fetchDelete = await myDeleteAuth(`${baseUrl}/api/question/${id}`, 'DELETE', token);
-    console.log('fetchDelete===', fetchDelete);
+
     if (fetchDelete === 'Question succesfully deleted!') {
       toast.success('Question succesfully deleted!');
       getQuestions();
@@ -34,14 +34,12 @@ function HomePage() {
 
   const getQuestASC = async () => {
     const fetchResult = await myFetch(`${baseUrl}/api/questionasc`);
-    console.log('fetchResult ===', fetchResult);
     if (Array.isArray(fetchResult)) {
       setQuestions(fetchResult);
     }
   };
   const getQuestDESC = async () => {
     const fetchResult = await myFetch(`${baseUrl}/api/questiondesc`);
-    console.log('fetchResult ===', fetchResult);
     if (Array.isArray(fetchResult)) {
       setQuestions(fetchResult);
     }

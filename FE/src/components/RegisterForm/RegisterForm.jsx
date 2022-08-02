@@ -1,5 +1,4 @@
 import css from './RegisterForm.module.css';
-
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router-dom';
@@ -33,7 +32,7 @@ function RegisterForm() {
       const valuesCopy = { ...values };
       delete valuesCopy['repeatPassword'];
       const registerResult = await myFetch(`${baseUrl}/api/register`, 'POST', valuesCopy);
-      console.log('registerResult ===', registerResult);
+
       if (registerResult === 'User successfully created!') {
         toast.success(`Success! Account: ${values.email} created!`);
         history.replace('/login');

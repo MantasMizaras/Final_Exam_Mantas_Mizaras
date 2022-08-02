@@ -28,24 +28,11 @@ function AnswerPage() {
   //   content: content,
   // };
 
-  // const [input, setIinput] = useState('');
-  // const [updatedTitleAndContent, setUpdatedTitleAndContent] = useState({ title, content });
-  // localStorage.removeItem('content');
-
-  // const [updatedTitle, setUpdatedTitle] = useState({ title, content });
-
-  // useEffect(() => {
-  //   setUpdatedTitle({ title, content });
-  // }, [title, content]);
-
   // const history = useHistory();
+  //   if (!token) history.push('/login');
   const { token } = useAuthCtx();
   const { id } = useParams();
-  //   if (!token) history.push('/login');
   const [answers, setAnswers] = useState('');
-
-  console.log('title ===', title);
-  console.log('content ===', content);
 
   const formik = useFormik({
     initialValues: initValues,
@@ -75,7 +62,6 @@ function AnswerPage() {
 
   async function deleteAnswer(id) {
     const fetchDelete = await myDeleteAuth(`${baseUrl}/api/answer/${id}`, 'DELETE', token);
-    console.log('fetchDelete===', fetchDelete);
     if (fetchDelete === 'Answer succesfully deleted!') {
       toast.success('Answer succesfully deleted!');
       getAnswers();
@@ -87,14 +73,12 @@ function AnswerPage() {
 
   const getAnswerASC = async () => {
     const fetchResult = await myFetch(`${baseUrl}/api/answerasc`);
-    console.log('fetchResult ===', fetchResult);
     if (Array.isArray(fetchResult)) {
       setAnswers(fetchResult);
     }
   };
   const getAnswertDESC = async () => {
     const fetchResult = await myFetch(`${baseUrl}/api/answerdesc`);
-    console.log('fetchResult ===', fetchResult);
     if (Array.isArray(fetchResult)) {
       setAnswers(fetchResult);
     }
@@ -105,11 +89,6 @@ function AnswerPage() {
   useEffect(() => {
     setUpdatedTitle({ title, content });
   }, [title, content]);
-
-  // useEffect(() => {
-  //   // setUpdatedTitleAndContent({ title: localStorage.getItem('title', 'content') });
-  //   setUpdatedTitleAndContent({ title, content });
-  // }, [title, content]);
 
   useEffect(() => {
     getAnswers();
@@ -160,15 +139,6 @@ function AnswerPage() {
       </div>
     </div>
   );
-  // } else {
-  //   return (
-  //     <div>
-  //       <h1 className={css['title']}>Your questions</h1>
-  //       <div className={css['container']}>
-  //         <h3 className={css['empty-page-text']}>You don't have any questions added.</h3>
-  //       </div>
-  //     </div>
-  //   );
 }
 
 export default AnswerPage;

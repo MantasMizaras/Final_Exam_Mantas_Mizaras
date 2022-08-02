@@ -5,11 +5,11 @@ export async function myFetch(url, method = 'GET', data = null) {
     };
     options.method = method === 'POST' ? 'POST' : 'GET';
     options.body = data ? JSON.stringify(data) : null;
-    console.log('options.body===', options.body);
+    // console.log('options.body===', options.body);
     const resp = await fetch(url, options);
-    console.log('resp===', resp);
+    // console.log('resp===', resp);
     const dataInJs = await resp.json();
-    console.log('dataInJs===', dataInJs);
+    // console.log('dataInJs===', dataInJs);
     return dataInJs;
   } catch (error) {
     throw new Error('error myFetch', error);
@@ -71,5 +71,5 @@ export async function myEditAuth(url, method = 'GET', token, data = null) {
 }
 
 export const baseUrl = import.meta.env.VITE_BACKEND_URL;
-console.log('baseUrl===', baseUrl);
+// console.log('baseUrl===', baseUrl);
 if (!baseUrl) throw new Error('baseUrl nerastas');

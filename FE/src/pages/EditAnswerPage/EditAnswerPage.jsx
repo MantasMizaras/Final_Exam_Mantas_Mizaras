@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import toast from 'react-hot-toast';
 import css from './EditAnswerPage.module.css';
 import { useEffect, useState } from 'react';
-// import { baseUrl, myEditAuth } from '../../utils';
 import Button from '../../components/UI/Button/Button';
 import { useAuthCtx } from '../../store/AuthContext';
 import { baseUrl, myEditAuth } from '../../utils';
@@ -20,7 +19,6 @@ function EditAnswerPage() {
 
   const history = useHistory();
   const { token } = useAuthCtx();
-  console.log('token ===', token);
   const { id } = useParams();
 
   const formik = useFormik({

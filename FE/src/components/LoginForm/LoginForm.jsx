@@ -1,5 +1,4 @@
 import css from './LoginForm.module.css';
-
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router-dom';
@@ -27,8 +26,6 @@ function LoginForm() {
     }),
     onSubmit: async (values) => {
       const fetchLoginResult = await myFetch(`${baseUrl}/api/login`, 'POST', values);
-      console.log('fetchLoginResult ===', fetchLoginResult);
-      console.log('values ===', values);
 
       if (fetchLoginResult.success === true) {
         toast.success(`Successfully logged in: ${values.email}`);
