@@ -17,19 +17,7 @@ function AnswerPage() {
   const title = localStorage.getItem('title');
   const content = localStorage.getItem('content');
 
-  // const [updatedTitle, setUpdatedTitle] = useState({ title, content });
-
-  // useEffect(() => {
-  //   setUpdatedTitle({ title, content });
-  // }, [title, content]);
-
-  // const initValues = {
-  //   title: title,
-  //   content: content,
-  // };
-
-  // const history = useHistory();
-  //   if (!token) history.push('/login');
+  const { isUserLoggedIn } = useAuthCtx();
   const { token } = useAuthCtx();
   const { id } = useParams();
   const [answers, setAnswers] = useState('');
@@ -101,54 +89,50 @@ function AnswerPage() {
       <h2 className={css['title']}>Question - {updatedTitle.title}</h2>
       <h3 className={css['content']}>{updatedTitle.content}</h3>
 
-      <div>
-        <h3>Sort by creating time </h3>
-        <Button onClick={getAnswerASC}>ASC</Button>
-        <Button onClick={getAnswertDESC}>DESC</Button>
-      </div>
+      {answers.length > 1 && (
+        <>
+          <div>
+            <h3>Sort by creating time</h3>
+            <Button onClick={getAnswerASC}>Newest</Button>
+            <Button onClick={getAnswertDESC}>Oldest</Button>
+          </div>
+        </>
+      )}
       <div className={css['cards-display']}>
         {answers.length > 0 ? (
           answers.map((sObj) => <AnswerCard key={sObj.id} {...sObj} onDelete={deleteAnswer} />)
         ) : (
-          <p>No answers yet.</p>
+          <h4 className={css['noAnswerMsg']}>NO ANSWERS YET.</h4>
         )}
       </div>
       {/* <AddAnswerForm onSubmit={getAnswers} /> */}
+      {isUserLoggedIn && (
+        <div className={css['form-container']}>
+          <h3 className={css['form-title']}>Know answer? Post it!</h3>
 
-      <div className={css['form-container']}>
-        <h3 className={css['form-title']}>Know answer? Post it!</h3>
-
-        <form onSubmit={formik.handleSubmit} className={css['add-form']}>
-          <div className={css['form-group']}>
-            <label htmlFor='answer'></label>
-            <textarea
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.answer}
-              type='text'
-              className={formik.touched.answer && formik.errors.answer ? css['is-invalid'] : ''}
-              id='answer'
-              name='answer'
-            />
-            {formik.touched.answer && formik.errors.answer && <p className={css['invalid-feedback']}>{formik.errors.answer}</p>}
-          </div>
-          <Button submit>Add</Button>
-        </form>
-        <NavLink to={'/'} className={css['nav-link']}>
-          Back to Questions
-        </NavLink>
-      </div>
+          <form onSubmit={formik.handleSubmit} className={css['add-form']}>
+            <div className={css['form-group']}>
+              <label htmlFor='answer'></label>
+              <textarea
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.answer}
+                type='text'
+                className={formik.touched.answer && formik.errors.answer ? css['is-invalid'] : ''}
+                id='answer'
+                name='answer'
+              />
+              {formik.touched.answer && formik.errors.answer && <p className={css['invalid-feedback']}>{formik.errors.answer}</p>}
+            </div>
+            <Button submit>Add</Button>
+          </form>
+          <NavLink to={'/'} className={css['nav-link']}>
+            Back to Questions
+          </NavLink>
+        </div>
+      )}
     </div>
   );
-  // } else {
-  //   return (
-  //     <div>
-  //       <h1 className={css['title']}>Your questions</h1>
-  //       <div className={css['container']}>
-  //         <h3 className={css['empty-page-text']}>You don't have any questions added.</h3>
-  //       </div>
-  //     </div>
-  //   );
 }
 
 export default AnswerPage;

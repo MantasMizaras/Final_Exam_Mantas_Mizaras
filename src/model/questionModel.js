@@ -43,11 +43,11 @@ function removeQuestion(id, user_id) {
 }
 
 function getQuestAsc() {
-  const sql = 'SELECT * FROM questions ORDER BY created_at ASC';
+  const sql = 'SELECT * FROM questions WHERE archived=0 ORDER BY created_at ASC';
   return executeDb(sql);
 }
 function getQuestDesc() {
-  const sql = 'SELECT * FROM questions ORDER BY created_at DESC';
+  const sql = 'SELECT * FROM questions WHERE archived=0 ORDER BY created_at DESC';
   return executeDb(sql);
 }
 

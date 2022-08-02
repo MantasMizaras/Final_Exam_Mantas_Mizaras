@@ -52,8 +52,8 @@ function HomePage() {
       <h1 className={css['title']}>QUESTIONS</h1>
       <div>
         <h3>Sort by creating time </h3>
-        <Button onClick={getQuestASC}>Oldest</Button>
         <Button onClick={getQuestDESC}>Newest</Button>
+        <Button onClick={getQuestASC}>Oldest</Button>
       </div>
       <div className={css['cards-display']}>
         {questions.length > 0 ? (
