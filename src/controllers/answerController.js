@@ -32,9 +32,8 @@ const postAnswer = async (req, res) => {
 const updateAnswer = async (req, res) => {
   const id = req.params;
   const { answer } = req.body;
-  const idFromToken = req.userId;
   try {
-    const result = await patchAnswer(id, answer, idFromToken);
+    const result = await patchAnswer(id, answer);
     if (result.affectedRows === 1) {
       res.status(201).json('Answer succesfully updated!');
       return;

@@ -26,9 +26,14 @@ function createNewQuestion(title, content, user_id) {
   return executeDb(sql, [title, content, user_id]);
 }
 
-function patchQuestion(id, title, content, user_id) {
-  const sql = `UPDATE questions SET title = ? ,content = ? WHERE id=${id.id} AND user_id=${user_id}`;
-  return executeDb(sql, [title, content, user_id]);
+function patchQuestion(id, title, content) {
+  // UPDATE questions SET title = 'Labas labas labas labas labas', content = 'Labas labas labas labas labas labas labas' WHERE id=18 AND user_id=1;
+  // const sql = `UPDATE questions SET title = ?, content = ? WHERE id=${id.id} AND user_id=${user_id}`;
+  const sql = `UPDATE questions SET title = ? ,content = ? WHERE id=${id.id}`;
+
+  console.log('title ===', title);
+  console.log('content ===', content);
+  return executeDb(sql, [title, content]);
 }
 
 function removeQuestion(id, user_id) {
