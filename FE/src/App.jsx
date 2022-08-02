@@ -5,7 +5,7 @@ import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
 import AnswerPage from './pages/AnswerPage/AnswerPage';
 import LoginPage from './pages/LoginPage';
-import NotFoundPage from './pages/NotFoundPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import QuestionsPage from './pages/QuestionsPage';
 import RegisterPage from './pages/RegisterPage';
 import { Toaster } from 'react-hot-toast';
