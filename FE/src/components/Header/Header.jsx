@@ -9,13 +9,9 @@ function Header(props) {
     <header>
       <nav className={css.header}>
         <NavLink to='/'>
-          <img className={css.img} src='../img/skills.png' alt='logoNav' />
+          <img className={css.img} src='../img/skills.png' alt='logoNav' to={'/'} />
         </NavLink>
         <div className={css['nav-container']}>
-          {/* <nav> */}
-          <NavLink className={css['nav-link']} to={'/'}>
-            Home
-          </NavLink>
           <NavLink className={css['nav-link']} to={'/questions'}>
             Questions
           </NavLink>

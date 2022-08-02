@@ -50,11 +50,15 @@ function HomePage() {
   return (
     <div className={css['container']}>
       <h1 className={css['title']}>QUESTIONS</h1>
-      <div>
-        <h3>Sort by creating time </h3>
-        <Button onClick={getQuestDESC}>Newest</Button>
-        <Button onClick={getQuestASC}>Oldest</Button>
-      </div>
+      {questions.length > 1 && (
+        <>
+          <div>
+            <h3>Sort by creating time </h3>
+            <Button onClick={getQuestDESC}>Newest</Button>
+            <Button onClick={getQuestASC}>Oldest</Button>
+          </div>
+        </>
+      )}
       <div className={css['cards-display']}>
         {questions.length > 0 ? (
           questions.map((sObj) => <QueCard key={sObj.id} {...sObj} onDelete={deleteQuestion} />)

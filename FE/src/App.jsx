@@ -6,7 +6,7 @@ import HomePage from './pages/HomePage/HomePage';
 import AnswerPage from './pages/AnswerPage/AnswerPage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import QuestionsPage from './pages/QuestionsPage';
+import QuestionsPageBEHOME from './pages/QuestionsPageBEHOME';
 import RegisterPage from './pages/RegisterPage';
 import { Toaster } from 'react-hot-toast';
 import AskQuestPage from './pages/AskQuestPage';
@@ -27,7 +27,7 @@ function App() {
           <LoginPage />
         </Route>
         <Route path={'/questions'}>
-          <QuestionsPage />
+          <QuestionsPageBEHOME />
         </Route>
         <ProtectedRoute path={'/editQuestion/:id'}>
           <EditQuestPage />
