@@ -1,6 +1,7 @@
 # Project Title
 
 This is final exam of CodeAcademy Typescript 1080hours course.
+Back-End created with NODE JS Express ir MYSQL server. Front End created with React + Vite.
 
 # Main features
 
@@ -52,3 +53,7 @@ npm run dev
 ## That's one small step for human, one giant leap for mankind 🚀
 
 - OK, almost ready :) You have to do last step. In terminal appears this message. --> Local: (with some http) Press ctrl + click on link and ENJOY Forum App.
+
+## Author
+
+Student: Mantas Mizaras
