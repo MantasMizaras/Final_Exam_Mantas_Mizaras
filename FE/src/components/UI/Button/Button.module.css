@@ -1,0 +1,34 @@
+.button {
+  margin-top: 0.5rem;
+  background-color: rgb(115, 102, 83);
+  border: 2px solid rgb(254, 254, 254);
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  color: aliceblue;
+}
+
+.primary {
+  background-color: bisque;
+  border: 0;
+  padding: 0.5rem 2rem;
+  margin-top: 0.3rem;
+  border-radius: 0.1rem;
+}
+
+.primary:hover {
+  background-color: rgb(251, 206, 152);
+}
+
+.secondary {
+  background-color: tomato;
+  color: white;
+  border: 0;
+  padding: 0.5rem 2rem;
+  margin-top: 0.3rem;
+  border-radius: 0.1rem;
+}
+
+.secondary:hover {
+  background-color: rgb(252, 82, 52);
+}

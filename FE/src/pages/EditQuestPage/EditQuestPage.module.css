@@ -1,0 +1,66 @@
+.form-container {
+  max-width: 50rem;
+  margin: 0 auto;
+  box-shadow: 2rem 3em 4rem rgba(11, 11, 11, 0.421);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  margin-top: 3rem;
+  background-color: #6e411d;
+}
+
+input,
+textarea,
+label {
+  margin-bottom: 7px;
+}
+
+h1,
+h3,
+label {
+  color: snow;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-title {
+  text-align: center;
+}
+
+.error-msg {
+  color: tomato;
+  margin: 0;
+}
+
+.invalid {
+  border: 0.01rem solid tomato;
+}
+
+.add-form input,
+textarea {
+  outline: none;
+  border-radius: 0.2rem;
+}
+.add-form input {
+  min-height: 1.5rem;
+}
+
+.add-form label {
+  margin-top: 0.5rem;
+}
+
+.add-form textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+.form-container button {
+  margin-right: 0.2rem;
+}
+
+.nav-link {
+  color: rgb(244, 130, 37);
+}

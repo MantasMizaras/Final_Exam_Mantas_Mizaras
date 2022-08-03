@@ -1,0 +1,88 @@
+### USERS LOGIN/REGISTER
+
+###
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+"nickname": "Del Q, with A belongs",
+"email": "ques@answer.lt",
+"password": "secret123"
+}
+
+###
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+"email": "kiesa@kestis.lt",
+"password": "secret123"
+}
+
+### QUESTIONS
+###
+GET http://localhost:3000/api/question
+
+###
+POST http://localhost:3000/api/question
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1OTQyNDc3NywiZXhwIjoxNjU5NDM1NTc3fQ.f5QMJc_T7K9Q0MNAwwGPnf9b55Z3z9cvtGmwHD-CX3M
+
+{
+  "title": "Question from rest rest",
+  "content": "How it looks from rest rest today"
+}
+
+###
+PATCH http://localhost:3000/api/question/18
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1OTQ0MzY1NCwiZXhwIjoxNjU5NDU0NDU0fQ.bh_IjzXq9A9LOUars9iwJA0gpCKS-vL4_s0xewczO3A
+
+{
+  "title": "Updating updating  dfefe",
+  "content": "Updating just from right accou updatingt fefefef"
+}
+
+###
+DELETE http://localhost:3000/api/question/4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY1OTAxMjcwNCwiZXhwIjoxNjU5MDIzNTA0fQ.bnQ8lTlgJf9WOwzeNxmjc-l5f6mqRsKIIP_WXrOwKWs
+
+### Q&A
+###
+GET http://localhost:3000/api/question/1/answer
+
+###
+POST http://localhost:3000/api/question/1/answer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1ODk5NDA2MCwiZXhwIjoxNjU5MDA0ODYwfQ.raAJ3G693-AE8qV2FseG3dgqtoXxbgEXoLc5Nufzu_s
+
+{
+  "answer": "Su paduotu user_id , kieno atsakymas"
+}
+
+### ANSWERS
+PATCH http://localhost:3000/api/answer/16
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1OTQ0NTgzNSwiZXhwIjoxNjU5NDU2NjM1fQ.EHM_nfhgqDLl9fbn3GU-mHh2f4vGfrSoawgUfb4z5pc
+
+{
+  "answer": "Bus gerai pamatysi , viskas ane is gero gyvenimo"
+}
+
+###
+DELETE http://localhost:3000/api/answer/6
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1OTAxMzA2OSwiZXhwIjoxNjU5MDIzODY5fQ.KbzlC0a21ROjNZtFEd9F3Lr3oQbCS8cnm_LcSdwthtc
+
+### ASC&DESC
+###
+GET http://localhost:3000/api/questionasc
+###
+GET http://localhost:3000/api/questiondesc
+
+###
+GET http://localhost:3000/api/answerasc
+
+###
+GET http://localhost:3000/api/answerdesc

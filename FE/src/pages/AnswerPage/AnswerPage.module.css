@@ -1,0 +1,112 @@
+.cards-display {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  color: snow;
+}
+
+.noAnswerMsg {
+  text-align: center;
+  color: snow;
+}
+
+.content {
+  text-align: center;
+  color: snow;
+  margin-bottom: 50px;
+}
+
+.answer-page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-container {
+  max-width: 50rem;
+  margin: 0 auto;
+  box-shadow: 2rem 3em 4rem rgba(11, 11, 11, 0.421);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  background-color: #6e411d;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-title {
+  text-align: center;
+}
+
+.add-form textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+.form-container button {
+  margin-bottom: 10px;
+}
+
+.nav-link {
+  color: rgb(244, 130, 37);
+}
+
+.empty-page-text {
+  margin-bottom: 200px;
+}
+
+@media screen and (min-width: 320px) {
+  .cards-display {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: 80%;
+  }
+}
+
+/* @media screen and (min-width: 425px) {
+      .cards-display {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .container {
+          width: 350px;
+      }
+    }
+    
+    @media screen and (min-width: 768px) {
+      .cards-display {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .container {
+          width: 800px;
+      }
+    }
+    @media screen and (min-width: 1024px) {
+      .cards-display {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      .cards-display {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+    } */

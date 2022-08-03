@@ -1,0 +1,10 @@
+body {
+  /* background: #316b66; */
+  background: #276623;
+  font-family: 'Lucida Console', 'Courier New', monospace;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
+}
